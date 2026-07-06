@@ -1,0 +1,5000 @@
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        CATALOGO_CIE10
+        (codigo_cie, nombre_enfermedad) 
+    values
+        (?, ?)

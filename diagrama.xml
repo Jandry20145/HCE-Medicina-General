@@ -1,0 +1,51 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Arquitectura Software Médico">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="GrupoFrontend" value="Capa de Presentación (Vista)" style="swimlane;whiteSpace=wrap;html=1;startSize=23;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="200" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="GrupoBackend" value="Capa de Negocio (Controlador)" style="swimlane;whiteSpace=wrap;html=1;startSize=23;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="360" y="160" width="200" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="GrupoBD" value="Capa de Datos (Modelo)" style="swimlane;whiteSpace=wrap;html=1;startSize=23;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="640" y="160" width="160" height="280" as="geometry" />
+        </mxCell>
+
+        <mxCell id="React" value="React JS&#10;(Frontend)&#10;&#10;UI Médicos y&#10;Pacientes" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="GrupoFrontend">
+          <mxGeometry x="40" y="100" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="SpringBoot" value="Java Spring Boot&#10;(Backend)&#10;&#10;- Validaciones&#10;- Lógica médica&#10;- Seguridad" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="GrupoBackend">
+          <mxGeometry x="40" y="90" width="120" height="100" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="BaseDatos" value="PostgreSQL / MySQL&#10;&#10;Historiales,&#10;Citas, Recetas" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;shadow=1;" vertex="1" parent="GrupoBD">
+          <mxGeometry x="20" y="90" width="120" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge1" value="Peticiones HTTP/REST&#10;(JSON)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="React" target="SpringBoot">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <Point x="320" y="300" />
+              <Point x="320" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="edge2" value="Consultas SQL&#10;Lectura/Escritura" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SpringBoot" target="BaseDatos">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <Point x="600" y="300" />
+              <Point x="600" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
