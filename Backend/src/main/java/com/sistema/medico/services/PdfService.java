@@ -29,11 +29,11 @@ public class PdfService {
 
     public byte[] generarPdfHistoriaClinica(Integer idPaciente) throws DocumentException {
         Optional<Paciente> pacienteOpt = pacienteRepository.findById(idPaciente);
-        if (pacienteOpt.isEmpty()) throw new RuntimeException("Paciente no encontrado");
+        if (pacienteOpt.isEmpty()) throw new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Paciente no encontrado");
         Paciente paciente = pacienteOpt.get();
 
         HistoriaClinica historia = historiaClinicaRepository.findByPaciente_IdPaciente(idPaciente)
-                .orElseThrow(() -> new RuntimeException("Historia Clinica no encontrada"));
+                .orElseThrow(() -> new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Historia clínica no encontrada"));
 
         Document document = new Document(PageSize.A4, 40, 40, 50, 50);
         ByteArrayOutputStream out = new ByteArrayOutputStream();

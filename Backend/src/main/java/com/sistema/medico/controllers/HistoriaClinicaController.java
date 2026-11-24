@@ -1,58 +1,39 @@
 package com.sistema.medico.controllers;
 
-import com.sistema.medico.models.ConsultaMedica;
 import com.sistema.medico.models.HistoriaClinica;
-import com.sistema.medico.models.Paciente;
 import com.sistema.medico.repositories.ConsultaMedicaRepository;
 import com.sistema.medico.repositories.HistoriaClinicaRepository;
-import com.sistema.medico.repositories.PacienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import com.sistema.medico.services.AuditoriaService;
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/historia-clinica")
-@CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 public class HistoriaClinicaController {
 
-    @Autowired
-    private HistoriaClinicaRepository historiaClinicaRepository;
+    private final HistoriaClinicaRepository historiaClinicaRepository;
+    private final ConsultaMedicaRepository consultaMedicaRepository;
+    private final AuditoriaService auditoria;
 
-    @Autowired
-    private ConsultaMedicaRepository consultaMedicaRepository;
-
-    @Autowired
-    private PacienteRepository pacienteRepository;
-
+    /** Paciente, expediente y consultas (la más reciente primero). Cada apertura queda auditada. */
     @GetMapping("/paciente/{idPaciente}")
-    public ResponseEntity<?> getHistoriaCompleta(@PathVariable Integer idPaciente) {
-        Optional<Paciente> pacienteOpt = pacienteRepository.findById(idPaciente);
-        if (!pacienteOpt.isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        Paciente paciente = pacienteOpt.get();
-        Optional<HistoriaClinica> hcOpt = historiaClinicaRepository.findByPaciente(paciente);
-        
-        if (!hcOpt.isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        HistoriaClinica hc = hcOpt.get();
-        
-        // Obtener historial cronológico de consultas
-        List<ConsultaMedica> consultas = consultaMedicaRepository.findByHistoriaClinicaOrderByFechaHoraAtencionDesc(hc);
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("paciente", paciente);
-        response.put("historia_clinica", hc);
-        response.put("consultas", consultas);
-
-        return ResponseEntity.ok(response);
+    @Transactional(readOnly = true)
+    public Map<String, Object> historiaCompleta(@PathVariable Integer idPaciente, HttpServletRequest http) {
+        HistoriaClinica hc = historiaClinicaRepository.findByPaciente_IdPaciente(idPaciente)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Historia clínica no encontrada"));
+        auditoria.registrar("HCE_CONSULTADA", "paciente=" + idPaciente, http);
+        Map<String, Object> r = new LinkedHashMap<>();
+        r.put("paciente", hc.getPaciente());
+        r.put("historia_clinica", hc);
+        r.put("consultas", consultaMedicaRepository.findByHistoriaClinicaOrderByFechaHoraAtencionDesc(hc));
+        return r;
     }
 }

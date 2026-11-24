@@ -1,43 +1,89 @@
-version: '3.8'
+name: hce-medicina-general
 
 services:
-  db:
+  # ---------- Base de datos ----------
+  mysql:
     image: mysql:8.0
-    container_name: sistema-medico-db
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: hce_reto
-    ports:
-      - "3305:3306"
-    volumes:
-      - ./ordenado.sql:/docker-entrypoint-initdb.d/init.sql
-    command: --default-authentication-plugin=mysql_native_password
+    container_name: hcemg-mysql
     restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Defina MYSQL_ROOT_PASSWORD en .env}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-hce_medicina_general}
+      MYSQL_USER: ${MYSQL_USER:-hcemg_app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Defina MYSQL_PASSWORD en .env}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_ai_ci
+    volumes:
+      # El esquema lo crea y actualiza el backend con Flyway al arrancar.
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "127.0.0.1:${MYSQL_PORT:-33520}:3306" # solo desde este equipo
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p\"$$MYSQL_ROOT_PASSWORD\" --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
 
+  # ---------- API ----------
   backend:
-    build:
-      context: ./Backend
-      dockerfile: Dockerfile
-    container_name: sistema-medico-api
-    ports:
-      - "8080:8080"
+    build: ./Backend
+    container_name: hcemg-backend
+    restart: unless-stopped
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/hce_reto?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-hce_medicina_general}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER:-hcemg_app}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:?Defina JWT_SECRET en .env}
+      HCE_ADMIN_USERNAME: ${HCE_ADMIN_USERNAME:?Defina HCE_ADMIN_USERNAME en .env}
+      HCE_ADMIN_PASSWORD: ${HCE_ADMIN_PASSWORD:?Defina HCE_ADMIN_PASSWORD en .env}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:8520}
+      CIE10_FILE: /app/CIE10.xls
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-prod}
+      # Hora de atención y "consultas de hoy" en hora local, no UTC.
+      TZ: ${TZ:-America/Guayaquil}
+      JAVA_OPTS: -Xms256m -Xmx768m
     volumes:
-      - ./CIE10.xls:/app/CIE10.xls
+      - ./CIE10.xls:/app/CIE10.xls:ro
     depends_on:
-      - db
-    restart: unless-stopped
-
-  frontend:
-    build:
-      context: ./Fronted
-      dockerfile: Dockerfile
-    container_name: sistema-medico-frontend
+      mysql:
+        condition: service_healthy
     ports:
-      - "80:80"
-    depends_on:
-      - backend
+      - "127.0.0.1:${BACKEND_PORT:-8521}:8080" # el navegador entra por nginx (/api)
+
+  # ---------- Aplicación web ----------
+  frontend:
+    build: ./Fronted
+    container_name: hcemg-frontend
     restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8520}:80"
+
+  # ---------- Respaldo bajo demanda: docker compose run --rm backup ----------
+  backup:
+    image: mysql:8.0
+    profiles: ["tools"]
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      MYSQL_PWD: ${MYSQL_ROOT_PASSWORD}
+      BACKUP_DB: ${MYSQL_DATABASE:-hce_medicina_general}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-30}
+    volumes:
+      - ./backups:/backups
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        archivo="/backups/hcemg_$$(date +%Y%m%d_%H%M%S).sql.gz"
+        mysqldump -h mysql -u root --single-transaction --routines --no-tablespaces "$$BACKUP_DB" | gzip > "$$archivo.tmp"
+        mv "$$archivo.tmp" "$$archivo"
+        find /backups -name 'hcemg_*.sql.gz' -mtime "+$$BACKUP_RETENTION_DAYS" -delete
+        echo "Respaldo creado: $$archivo"
+
+volumes:
+  mysql-data:
+    name: hcemg-mysql-data

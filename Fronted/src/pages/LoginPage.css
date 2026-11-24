@@ -1,0 +1,191 @@
+/* Portada de acceso. Basada en "Wild Pill" (MotionSites): una línea plana se abre en una
+   cápsula con video. Todo se mide desde --fs, el tamaño de la palabra. */
+.acceso {
+  --papel: #eef1f3;
+  --tinta: #121a21;
+  --tinta-2: #3b4650;
+  --regla: #a7b0b7;
+  --acento: #0f766e;
+  --fs: min(17vh, 11vw);
+
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #fff;
+  color: var(--tinta);
+  font-family: 'Inter Variable', Inter, system-ui, sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.acceso ::selection { background: var(--tinta); color: #fff; }
+
+.acceso-fondo { position: absolute; inset: 0; background: var(--papel); }
+.acceso-fondo svg { width: 100%; height: 100%; display: block; }
+
+.acceso-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 22px clamp(20px, 4vw, 56px) 0;
+  font-size: 13px;
+  font-weight: 450;
+  color: var(--tinta-2);
+}
+.acceso-marca { font-weight: 650; letter-spacing: -0.02em; color: var(--tinta); font-size: 15px; }
+.acceso-marca sup { font-size: 0.55em; font-weight: 500; margin-left: 1px; }
+.acceso-nav-der { display: flex; gap: 10px; }
+
+.acceso-hero { position: relative; display: grid; place-items: center; padding-bottom: 6vh; }
+.acceso-palabra {
+  display: flex;
+  align-items: center;
+  gap: 0.07em;
+  font-size: var(--fs);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.8;
+  user-select: none;
+}
+.acceso-mitad { display: block; }
+
+.acceso-pill {
+  position: relative;
+  display: block;
+  width: 3.4em;
+  height: 1.81em;
+  font-size: inherit;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #cfd8de;
+  box-shadow: 0 4px 14px rgba(18, 26, 33, 0.12);
+}
+.acceso-pill video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.acceso-velo { position: absolute; inset: 0; background: #b9c1c7; opacity: 0; }
+.acceso-icono {
+  position: absolute;
+  top: 50%;
+  width: max(16px, 0.12em);
+  height: max(16px, 0.12em);
+  transform: translateY(-50%);
+  color: #fff;
+  opacity: 0.85;
+}
+.acceso-icono--izq { left: 0.22em; }
+.acceso-icono--der { right: 0.22em; }
+
+.acceso-pie {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(16px, 2.5vw, 40px);
+  padding: 0 clamp(20px, 4vw, 56px) clamp(24px, 5vh, 56px);
+}
+.acceso-texto {
+  max-width: 25rem;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--tinta-2);
+}
+.acceso-capital {
+  float: left;
+  font-size: 2.35em;
+  line-height: 0.9;
+  font-weight: 650;
+  margin: 0.06em 0.08em 0 0;
+  color: var(--tinta);
+}
+.acceso-regla {
+  flex: 1;
+  height: 1px;
+  margin-bottom: 22px;
+  background: var(--regla);
+  transform-origin: center;
+}
+
+.acceso-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; max-width: 34rem; }
+.acceso-campo {
+  width: 11.5rem;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(18, 26, 33, 0.16);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 14px;
+}
+.acceso-campo::placeholder { color: #7a858e; }
+.acceso-campo:focus-visible, .acceso-boton:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+.acceso-boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 8px 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--tinta);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s cubic-bezier(.4, 0, .2, 1);
+}
+.acceso-boton:disabled { opacity: 0.55; cursor: default; }
+.acceso-flecha {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--tinta);
+  transition: transform 0.25s cubic-bezier(.22, 1, .36, 1);
+}
+.acceso-boton:not(:disabled):hover .acceso-flecha { transform: translateX(2px) rotate(-45deg); }
+.acceso-error {
+  flex-basis: 100%;
+  margin: 0 0 2px;
+  text-align: right;
+  font-size: 13px;
+  color: #b42318;
+}
+
+/* Sin animación: estado final directo. */
+.acceso--final .acceso-velo { opacity: 0; }
+
+@media (max-width: 720px) {
+  .acceso { --fs: min(34vw, 16.5vh); overflow-y: auto; }
+  .acceso-nav-der span:not(:last-child) { display: none; }
+  .acceso-palabra { flex-direction: column; gap: 0.08em; }
+  .acceso-pill { width: calc(100vw - 40px); height: calc((100vw - 40px) / 1.85); font-size: inherit; }
+  .acceso-icono { width: 18px; height: 18px; }
+  .acceso-icono--izq { left: 18px; }
+  .acceso-icono--der { right: 18px; }
+  .acceso-pie { flex-direction: column; align-items: stretch; padding: 0 20px 24px; gap: 14px; }
+  .acceso-texto { max-width: none; font-size: 13px; }
+  .acceso-regla { display: none; }
+  .acceso-form { max-width: none; justify-content: stretch; }
+  .acceso-campo { flex: 1 1 100%; width: auto; }
+  .acceso-boton { flex: 1 1 100%; justify-content: space-between; }
+  .acceso-error { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acceso-pill video { display: none; }
+  .acceso-pill { background: linear-gradient(120deg, #cfdcea, #e9eef5 55%, #c8d3e6); }
+}

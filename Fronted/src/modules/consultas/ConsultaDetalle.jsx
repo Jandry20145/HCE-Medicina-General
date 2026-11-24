@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Activity, FileText, User, Calendar, Pill, AlertCircle, Stethoscope } from 'lucide-react';
-import { API_URL } from '../../services/api';
+import { api } from '../../services/api';
+import { calcularImc } from '../../utils/clinica';
 
 export const ConsultaDetalle = () => {
   const { idConsulta } = useParams();
@@ -12,12 +13,8 @@ export const ConsultaDetalle = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch(`${API_URL}/consultas/${idConsulta}`)
-      .then(res => {
-        if (!res.ok) throw new Error('No se pudo cargar la consulta');
-        return res.json();
-      })
-      .then(resData => setData(resData))
+    api.get(`/consultas/${idConsulta}`)
+      .then(setData)
       .catch(err => setError(err.message))
       .finally(() => setLoading(false));
   }, [idConsulta]);
@@ -146,22 +143,21 @@ export const ConsultaDetalle = () => {
             </h2>
             {signosVitales ? (
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-3 bg-amber-900/20 rounded-lg border border-amber-800/50 text-center">
-                  <p className="text-xs text-amber-400 font-bold uppercase tracking-wide">P. Arterial</p>
-                  <p className="text-lg font-black text-amber-200">{signosVitales.presionArterial || '--'}</p>
-                </div>
-                <div className="p-3 bg-amber-900/20 rounded-lg border border-amber-800/50 text-center">
-                  <p className="text-xs text-amber-400 font-bold uppercase tracking-wide">Pulso</p>
-                  <p className="text-lg font-black text-amber-200">{signosVitales.pulso || '--'} <span className="text-xs font-normal text-amber-400/70">lpm</span></p>
-                </div>
-                <div className="p-3 bg-amber-900/20 rounded-lg border border-amber-800/50 text-center">
-                  <p className="text-xs text-amber-400 font-bold uppercase tracking-wide">Temp.</p>
-                  <p className="text-lg font-black text-amber-200">{signosVitales.temperatura || '--'} <span className="text-xs font-normal text-amber-400/70">°C</span></p>
-                </div>
-                <div className="p-3 bg-amber-900/20 rounded-lg border border-amber-800/50 text-center">
-                  <p className="text-xs text-amber-400 font-bold uppercase tracking-wide">Peso</p>
-                  <p className="text-lg font-black text-amber-200">{signosVitales.peso || '--'} <span className="text-xs font-normal text-amber-400/70">kg</span></p>
-                </div>
+                {[
+                  ['P. Arterial', signosVitales.presionArterial, 'mmHg'],
+                  ['Pulso', signosVitales.pulso, 'lpm'],
+                  ['F. Resp.', signosVitales.frecuenciaRespiratoria, 'rpm'],
+                  ['Temp.', signosVitales.temperatura, '°C'],
+                  ['SpO₂', signosVitales.saturacionOxigeno, '%'],
+                  ['Peso', signosVitales.pesoKg, 'kg'],
+                  ['Talla', signosVitales.tallaCm, 'cm'],
+                  ['IMC', calcularImc(signosVitales.pesoKg, signosVitales.tallaCm), 'kg/m²'],
+                ].map(([etiqueta, valor, unidad]) => (
+                  <div key={etiqueta} className="p-3 bg-amber-900/20 rounded-lg border border-amber-800/50 text-center">
+                    <p className="text-xs text-amber-400 font-bold uppercase tracking-wide">{etiqueta}</p>
+                    <p className="text-lg font-black text-amber-200">{valor ?? '--'} {valor != null && <span className="text-xs font-normal text-amber-400/70">{unidad}</span>}</p>
+                  </div>
+                ))}
               </div>
             ) : (
               <p className="text-sm text-slate-500 italic">No se registraron signos vitales.</p>

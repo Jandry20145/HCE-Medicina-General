@@ -1,11 +1,9 @@
 package com.sistema.medico.dto;
 
-public class LoginRequest {
-    private String username;
-    private String password;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+public record LoginRequest(
+        @NotBlank(message = "Ingrese el usuario") @Size(max = 50) String username,
+        @NotBlank(message = "Ingrese la contraseña") @Size(max = 128) String password) {
 }

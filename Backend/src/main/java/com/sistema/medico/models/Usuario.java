@@ -1,7 +1,9 @@
 package com.sistema.medico.models;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
@@ -16,6 +18,8 @@ public class Usuario {
     @Column(name = "username", nullable = false, unique = true, length = 50)
     private String username;
 
+    @JsonIgnore // el hash nunca sale en una respuesta (iba dentro de cada consulta)
+    @ToString.Exclude
     @Column(name = "password_hash", nullable = false, length = 255)
     private String passwordHash;
 

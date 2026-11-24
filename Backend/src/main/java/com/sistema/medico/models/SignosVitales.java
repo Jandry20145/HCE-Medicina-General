@@ -42,4 +42,7 @@ public class SignosVitales {
 
     @Column(name = "grupo_sanguineo", length = 10)
     private String grupoSanguineo;
+
+    @Column(name = "saturacion_oxigeno")
+    private Integer saturacionOxigeno;
 }

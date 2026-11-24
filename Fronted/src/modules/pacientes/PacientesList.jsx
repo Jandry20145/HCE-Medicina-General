@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FileText, Edit, PlusCircle, Search, UserPlus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from '../../services/api';
+import { api } from '../../services/api';
+import { useAuth } from '../../auth/AuthContext';
+import { puede } from '../../auth/permisos';
+import { calcularEdad } from '../../utils/clinica';
 
 export const PacientesList = () => {
   const navigate = useNavigate();
   const [pacientes, setPacientes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
-  const userRol = localStorage.getItem('userRol') || '';
+  const { usuario } = useAuth();
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchPacientes = async () => {
       try {
-        const res = await fetch(`${API_URL}/pacientes`);
-        const data = await res.json();
-        setPacientes(data);
+        setPacientes(await api.get('/pacientes'));
       } catch (err) {
-        console.error(err);
+        setError(err.message);
       } finally {
         setLoading(false);
       }
@@ -25,18 +27,11 @@ export const PacientesList = () => {
     fetchPacientes();
   }, []);
 
-  const calculateAge = (dob) => {
-    if (!dob) return 'N/A';
-    const diff_ms = Date.now() - new Date(dob).getTime();
-    const age_dt = new Date(diff_ms);
-    return Math.abs(age_dt.getUTCFullYear() - 1970);
-  };
-
+  const q = searchTerm.trim().toLowerCase();
   const filteredPacientes = pacientes.filter(p =>
-    p.nombresCompletos.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.apellidosCompletos.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.cedulaIdentidad.includes(searchTerm) ||
-    p.numeroHistoriaClinica.includes(searchTerm)
+    `${p.nombresCompletos} ${p.apellidosCompletos}`.toLowerCase().includes(q) ||
+    p.cedulaIdentidad.includes(q) ||
+    p.numeroHistoriaClinica.toLowerCase().includes(q)
   );
 
   return (
@@ -46,14 +41,16 @@ export const PacientesList = () => {
           <h1 className="text-3xl font-bold text-slate-100 mb-2">Pacientes</h1>
           <p className="text-slate-400">Gestión de historias clínicas y registro de consultas.</p>
         </div>
-        <button
+        {puede(usuario, 'editarPacientes') && <button
           onClick={() => navigate('/pacientes/nuevo')}
           className="flex items-center px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg shadow-sm transition-all font-medium"
         >
           <UserPlus size={18} className="mr-2" />
           Nuevo Paciente
-        </button>
+        </button>}
       </div>
+
+      {error && <p role="alert" className="text-red-300">{error}</p>}
 
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
@@ -105,12 +102,12 @@ export const PacientesList = () => {
                     <td className="px-6 py-4">
                       <div className="font-medium text-slate-100">{p.nombresCompletos} {p.apellidosCompletos}</div>
                     </td>
-                    <td className="px-6 py-4 text-slate-400">{calculateAge(p.fechaNacimiento)} años</td>
+                    <td className="px-6 py-4 text-slate-400">{calcularEdad(p.fechaNacimiento) ?? '—'} años</td>
                     <td className="px-6 py-4 text-slate-400">{p.sexo}</td>
                     <td className="px-6 py-4 text-slate-400">{p.telefono || 'N/A'}</td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex justify-end gap-2">
-                        {userRol !== 'Admision' && (
+                        {puede(usuario, 'verHistoria') && (
                           <button
                             onClick={() => navigate(`/historia-clinica/${p.idPaciente}`)}
                             className="p-2 text-cyan-400 hover:text-cyan-300 bg-cyan-900/30 hover:bg-cyan-900/60 rounded-lg transition-colors border border-cyan-800/50"
@@ -119,14 +116,14 @@ export const PacientesList = () => {
                             <FileText className="w-4 h-4" />
                           </button>
                         )}
-                        <button
+                        {puede(usuario, 'editarPacientes') && <button
                           onClick={() => navigate(`/pacientes/editar/${p.idPaciente}`)}
                           className="p-2 text-slate-400 hover:text-slate-300 bg-slate-700/50 hover:bg-slate-600 rounded-lg transition-colors border border-slate-600"
                           title="Editar Paciente"
                         >
                           <Edit className="w-4 h-4" />
-                        </button>
-                        {userRol !== 'Admision' && (
+                        </button>}
+                        {puede(usuario, 'crearConsulta') && (
                           <button
                             onClick={() => navigate(`/consultas/nueva/${p.idPaciente}`)}
                             className="p-2 text-teal-400 hover:text-teal-300 bg-teal-900/30 hover:bg-teal-900/60 rounded-lg transition-colors border border-teal-800/50"

@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Printer, Calendar, Clock, Activity, FileText, Plus, AlertCircle } from 'lucide-react';
-import { API_URL, getAntecedentesPaciente, saveAntecedente } from '../../services/api';
+import { apiFetch, api, getAntecedentesPaciente, saveAntecedente } from '../../services/api';
+import { useAuth } from '../../auth/AuthContext';
+import { puede } from '../../auth/permisos';
+import { calcularEdad } from '../../utils/clinica';
 
 export const VistaHCE = () => {
   const { idPaciente } = useParams();
@@ -12,8 +15,8 @@ export const VistaHCE = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const userRole = localStorage.getItem('userRol');
-  const isReadOnly = userRole === 'Admision';
+  const { usuario } = useAuth();
+  const isReadOnly = !puede(usuario, 'registrarAntecedentes');
 
   const [showAntForm, setShowAntForm] = useState(false);
   const [antForm, setAntForm] = useState({
@@ -28,10 +31,7 @@ export const VistaHCE = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resHce = await fetch(`${API_URL}/historia-clinica/paciente/${idPaciente}`);
-        if (!resHce.ok) throw new Error('No se pudo cargar la historia clínica');
-        const dataHce = await resHce.json();
-        setHceData(dataHce);
+        setHceData(await api.get(`/historia-clinica/paciente/${idPaciente}`));
 
         const dataAnt = await getAntecedentesPaciente(idPaciente);
         setAntecedentes(dataAnt);
@@ -46,8 +46,7 @@ export const VistaHCE = () => {
 
   const descargarPdf = async () => {
     try {
-      const res = await fetch(`${API_URL}/pdf/historia/${idPaciente}`);
-      if (!res.ok) throw new Error('Error al generar PDF');
+      const res = await apiFetch(`/pdf/historia/${idPaciente}`, { raw: true });
 
       const blob = await res.blob();
       const url = window.URL.createObjectURL(blob);
@@ -71,7 +70,7 @@ export const VistaHCE = () => {
         ...antForm
       };
       const result = await saveAntecedente(payload);
-      setAntecedentes([...antecedentes, result.antecedente]);
+      setAntecedentes([...antecedentes, result]);
       setShowAntForm(false);
       setAntForm({
         tipoAntecedente: 'Personal',
@@ -93,12 +92,6 @@ export const VistaHCE = () => {
 
   const { paciente, historia_clinica, consultas } = hceData;
 
-  const calculateAge = (dob) => {
-    if (!dob) return 'N/A';
-    const diff_ms = Date.now() - new Date(dob).getTime();
-    return Math.abs(new Date(diff_ms).getUTCFullYear() - 1970);
-  };
-
   const personales = antecedentes.filter(a => a.tipoAntecedente === 'Personal');
   const familiares = antecedentes.filter(a => a.tipoAntecedente === 'Familiar');
   const patologicos = antecedentes.filter(a => a.tipoAntecedente === 'Patológico');
@@ -119,22 +112,32 @@ export const VistaHCE = () => {
           </div>
         </div>
         <div className="flex gap-2">
-          <button
+          {puede(usuario, 'crearConsulta') && <button
             onClick={() => navigate(`/consultas/nueva/${idPaciente}`)}
             className="flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium shadow-sm"
           >
             <Activity size={18} className="mr-2" />
             Nueva Consulta
-          </button>
-          <button
+          </button>}
+          {puede(usuario, 'descargarPdf') && <button
             onClick={descargarPdf}
             className="flex items-center px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white rounded-lg transition-colors font-medium shadow-sm"
           >
             <Printer size={18} className="mr-2" />
             Imprimir PDF
-          </button>
+          </button>}
         </div>
       </div>
+
+      {alergias.length > 0 && (
+        <div role="alert" className="bg-rose-500/10 border border-rose-500/50 text-rose-200 px-5 py-4 rounded-xl flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 mt-0.5 text-rose-400 shrink-0" aria-hidden="true" />
+          <div>
+            <p className="font-semibold">Alergias registradas</p>
+            <p className="text-sm">{alergias.map(a => a.enfermedadAsociada).join(' · ')}</p>
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
@@ -157,7 +160,7 @@ export const VistaHCE = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-slate-400">Edad</p>
-                  <p className="text-slate-100">{calculateAge(paciente.fechaNacimiento)} años</p>
+                  <p className="text-slate-100">{calcularEdad(paciente.fechaNacimiento) ?? '—'} años</p>
                 </div>
                 <div>
                   <p className="text-slate-400">Sexo</p>
@@ -377,7 +380,7 @@ export const VistaHCE = () => {
             {consultas && consultas.length > 0 ? (
               <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-600 before:to-transparent">
 
-                {consultas.map((consulta, idx) => (
+                {consultas.map((consulta) => (
                   <div key={consulta.idConsulta} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                     {/* Icono central de la linea de tiempo */}
                     <div className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-cyan-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">

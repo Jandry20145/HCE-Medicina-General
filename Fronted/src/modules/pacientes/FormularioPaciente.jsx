@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Save, ArrowLeft } from 'lucide-react';
-import { API_URL } from '../../services/api';
+import { api } from '../../services/api';
+import { cedulaValida } from '../../utils/clinica';
 
 export const FormularioPaciente = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // Si hay ID, es edición
 
-  const userRole = localStorage.getItem('userRol');
-  const isReadOnly = userRole === 'Admision';
+  // La ruta ya exige permiso de edición (Admin, Admisión o Médico).
+  const isReadOnly = false;
 
   const [formData, setFormData] = useState({
     numeroHistoriaClinica: '',
@@ -31,8 +32,7 @@ export const FormularioPaciente = () => {
   useEffect(() => {
     if (id) {
       // Fetch paciente para editar
-      fetch(`${API_URL}/pacientes/${id}`)
-        .then(res => res.json())
+      api.get(`/pacientes/${id}`)
         .then(data => {
           setFormData({
             numeroHistoriaClinica: data.numeroHistoriaClinica || '',
@@ -48,7 +48,8 @@ export const FormularioPaciente = () => {
             correoElectronico: data.correoElectronico || '',
             seguroSalud: data.seguroSalud || ''
           });
-        });
+        })
+        .catch(err => setError(err.message));
     }
   }, [id]);
 
@@ -64,29 +65,6 @@ export const FormularioPaciente = () => {
     });
   };
 
-  const validarCedulaEcuatoriana = (cedula) => {
-    if (cedula.length !== 10 || !/^\d+$/.test(cedula)) return false;
-    const provincia = parseInt(cedula.substring(0, 2), 10);
-    if (provincia < 1 || provincia > 24) return false;
-    const tercerDigito = parseInt(cedula.substring(2, 3), 10);
-    if (tercerDigito >= 6) return false;
-
-    let suma = 0;
-    for (let i = 0; i < 9; i++) {
-      let digito = parseInt(cedula.charAt(i), 10);
-      if (i % 2 === 0) {
-        let multi = digito * 2;
-        if (multi > 9) multi -= 9;
-        suma += multi;
-      } else {
-        suma += digito;
-      }
-    }
-    const modulo = suma % 10;
-    const verificador = modulo === 0 ? 0 : 10 - modulo;
-    return verificador === parseInt(cedula.charAt(9), 10);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isReadOnly) {
@@ -96,7 +74,7 @@ export const FormularioPaciente = () => {
     setLoading(true);
     setError('');
 
-    if (!validarCedulaEcuatoriana(formData.cedulaIdentidad)) {
+    if (!cedulaValida(formData.cedulaIdentidad)) {
       setError('La Cédula de Identidad ingresada no es válida.');
       setLoading(false);
       return;
@@ -117,20 +95,11 @@ export const FormularioPaciente = () => {
     }
 
     try {
-      const url = id ? `${API_URL}/pacientes/${id}` : `${API_URL}/pacientes`;
-      const method = id ? 'PUT' : 'POST';
-
-      const response = await fetch(url, {
-        method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Ocurrió un error al guardar.');
-      }
+      // El N° de HC lo asigna el servidor: no se envía.
+      // eslint-disable-next-line no-unused-vars
+      const { numeroHistoriaClinica, ...datos } = formData;
+      if (id) await api.put(`/pacientes/${id}`, datos);
+      else await api.post('/pacientes', datos);
 
       navigate('/pacientes');
     } catch (err) {

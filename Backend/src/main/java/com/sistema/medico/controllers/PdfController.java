@@ -1,36 +1,33 @@
 package com.sistema.medico.controllers;
 
+import com.sistema.medico.services.AuditoriaService;
 import com.sistema.medico.services.PdfService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/pdf")
-@CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 public class PdfController {
 
-    @Autowired
-    private PdfService pdfService;
+    private final PdfService pdfService;
+    private final AuditoriaService auditoria;
 
     @GetMapping("/historia/{idPaciente}")
-    public ResponseEntity<byte[]> descargarHistoriaClinica(@PathVariable Integer idPaciente) {
-        try {
-            byte[] pdfBytes = pdfService.generarPdfHistoriaClinica(idPaciente);
-
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_PDF);
-            headers.setContentDispositionFormData("attachment", "Historia_Clinica_" + idPaciente + ".pdf");
-            headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
-
-            return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<byte[]> descargarHistoriaClinica(@PathVariable Integer idPaciente, HttpServletRequest http)
+            throws Exception {
+        byte[] pdf = pdfService.generarPdfHistoriaClinica(idPaciente);
+        auditoria.registrar("PDF_DESCARGADO", "paciente=" + idPaciente, http);
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_PDF)
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        ContentDisposition.attachment().filename("Historia_Clinica_" + idPaciente + ".pdf").build().toString())
+                .header(HttpHeaders.CACHE_CONTROL, "no-store")
+                .body(pdf);
     }
 }

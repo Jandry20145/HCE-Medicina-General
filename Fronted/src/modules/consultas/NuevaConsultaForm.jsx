@@ -1,15 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FileText, Activity, Save, Plus, ArrowLeft } from 'lucide-react';
+import { FileText, Activity, Save, Plus, ArrowLeft, AlertCircle } from 'lucide-react';
 import AsyncSelect from 'react-select/async';
-import { buscarCie10, API_URL } from '../../services/api';
+import { buscarCie10, api, getAntecedentesPaciente } from '../../services/api';
+import { useAuth } from '../../auth/AuthContext';
+import { puede } from '../../auth/permisos';
+import { alertasSignos, calcularImc, clasificarImc, signosParaApi } from '../../utils/clinica';
+
+const CAMPOS_SIGNOS = [
+  { k: 'presionArterial', label: 'P. arterial (mmHg)', ph: '120/80', tipo: 'text' },
+  { k: 'pulso', label: 'Pulso (lpm)', ph: '75' },
+  { k: 'frecuenciaRespiratoria', label: 'F. respiratoria (rpm)', ph: '16' },
+  { k: 'temperatura', label: 'Temperatura (°C)', ph: '36.5', step: '0.1' },
+  { k: 'saturacionOxigeno', label: 'SpO₂ (%)', ph: '98' },
+  { k: 'pesoKg', label: 'Peso (kg)', ph: '70', step: '0.1' },
+  { k: 'tallaCm', label: 'Talla (cm)', ph: '165', step: '0.1' },
+];
+const NIVEL_COLOR = { normal: 'text-teal-300', alerta: 'text-amber-300', critico: 'text-rose-300' };
 import { selectStyles } from '../../styles/reactSelectStyles';
 
 export const NuevaConsultaForm = () => {
   const { idPaciente } = useParams();
   const navigate = useNavigate();
-  const userRole = localStorage.getItem('userRol');
-  const isReadOnly = userRole === 'Admision';
+  const { usuario } = useAuth();
+  const isReadOnly = !puede(usuario, 'crearConsulta');
+  const [alergias, setAlergias] = useState([]);
 
   const [hceData, setHceData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -24,8 +39,9 @@ export const NuevaConsultaForm = () => {
       temperatura: '',
       frecuenciaRespiratoria: '',
       saturacionOxigeno: '',
-      peso: '',
-      talla: ''
+      pesoKg: '',
+      tallaCm: '',
+      grupoSanguineo: ''
     },
     examenFisico: [{ regionAnatomica: 'Cabeza y Cuello', hallazgos: '' }],
     diagnosticos: [],
@@ -37,10 +53,12 @@ export const NuevaConsultaForm = () => {
 
   useEffect(() => {
     // Fetch Historia Clinica to get ID
-    fetch(`${API_URL}/historia-clinica/paciente/${idPaciente}`)
-      .then(res => res.json())
-      .then(data => setHceData(data))
-      .catch(console.error);
+    api.get(`/historia-clinica/paciente/${idPaciente}`)
+      .then(setHceData)
+      .catch(err => alert(err.message));
+    getAntecedentesPaciente(idPaciente)
+      .then(ants => setAlergias(ants.filter(a => a.tipoAntecedente === 'Alergia')))
+      .catch(() => setAlergias([]));
   }, [idPaciente]);
 
   const loadOptions = async (inputValue) => {
@@ -59,16 +77,9 @@ export const NuevaConsultaForm = () => {
 
     const dto = {
       idHistoriaClinica: hceData.historia_clinica.idHistoriaClinica,
-      idMedico: 1, // Usuario Quemado para fines académicos
       motivoConsulta: formData.motivoConsulta,
       enfermedadActual: formData.enfermedadActual,
-      signosVitales: {
-        presionArterial: formData.signosVitales.presionArterial,
-        pulso: formData.signosVitales.pulso ? parseInt(formData.signosVitales.pulso) : 0,
-        temperatura: formData.signosVitales.temperatura ? parseFloat(formData.signosVitales.temperatura) : 0,
-        peso: formData.signosVitales.peso ? parseFloat(formData.signosVitales.peso) : 0,
-        talla: formData.signosVitales.talla ? parseFloat(formData.signosVitales.talla) : 0
-      },
+      signosVitales: signosParaApi(formData.signosVitales),
       examenFisico: formData.examenFisico.filter(e => e.hallazgos.trim() !== ''),
       diagnosticos: formData.diagnosticos.map(d => ({
         idCie10: d.value,
@@ -83,13 +94,7 @@ export const NuevaConsultaForm = () => {
     };
 
     try {
-      const res = await fetch(`${API_URL}/consultas`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dto)
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Error al guardar consulta');
+      await api.post('/consultas', dto);
 
       navigate(`/historia-clinica/${idPaciente}`);
     } catch (err) {
@@ -98,6 +103,10 @@ export const NuevaConsultaForm = () => {
       setLoading(false);
     }
   };
+
+  const imc = calcularImc(formData.signosVitales.pesoKg, formData.signosVitales.tallaCm);
+  const claseImc = clasificarImc(imc);
+  const avisos = alertasSignos(formData.signosVitales);
 
   return (
     <div className="space-y-6 animate-fade-in max-w-6xl mx-auto pb-12">
@@ -110,6 +119,16 @@ export const NuevaConsultaForm = () => {
           <p className="text-slate-400">Paciente: {hceData?.paciente?.nombresCompletos} {hceData?.paciente?.apellidosCompletos}</p>
         </div>
       </div>
+
+      {alergias.length > 0 && (
+        <div role="alert" className="bg-rose-500/10 border border-rose-500/50 text-rose-200 px-5 py-4 rounded-xl flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 mt-0.5 text-rose-400 shrink-0" aria-hidden="true" />
+          <div>
+            <p className="font-semibold">Paciente con alergias registradas</p>
+            <p className="text-sm">{alergias.map(a => a.enfermedadAsociada).join(' · ')}. Revise antes de prescribir.</p>
+          </div>
+        </div>
+      )}
 
       {isReadOnly && (
         <div className="bg-red-500/10 border border-red-500/50 text-red-400 px-6 py-4 rounded-xl flex items-center gap-3">
@@ -411,23 +430,42 @@ export const NuevaConsultaForm = () => {
               <Activity className="w-5 h-5" /> Signos Vitales
             </h3>
             <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">P. Arterial</label>
-                <input disabled={isReadOnly} value={formData.signosVitales.presionArterial} onChange={(e) => setFormData({ ...formData, signosVitales: { ...formData.signosVitales, presionArterial: e.target.value } })} className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 outline-none text-sm shadow-sm focus:border-cyan-500 placeholder-slate-500 disabled:opacity-50 disabled:cursor-not-allowed" placeholder="120/80" />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Pulso</label>
-                <input disabled={isReadOnly} type="number" value={formData.signosVitales.pulso} onChange={(e) => setFormData({ ...formData, signosVitales: { ...formData.signosVitales, pulso: e.target.value } })} className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 outline-none text-sm shadow-sm focus:border-cyan-500 placeholder-slate-500 disabled:opacity-50 disabled:cursor-not-allowed" placeholder="75" />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Temp (°C)</label>
-                <input disabled={isReadOnly} type="number" step="0.1" value={formData.signosVitales.temperatura} onChange={(e) => setFormData({ ...formData, signosVitales: { ...formData.signosVitales, temperatura: e.target.value } })} className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 outline-none text-sm shadow-sm focus:border-cyan-500 placeholder-slate-500 disabled:opacity-50 disabled:cursor-not-allowed" placeholder="36.5" />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Peso (kg)</label>
-                <input disabled={isReadOnly} type="number" step="0.1" value={formData.signosVitales.peso} onChange={(e) => setFormData({ ...formData, signosVitales: { ...formData.signosVitales, peso: e.target.value } })} className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 outline-none text-sm shadow-sm focus:border-cyan-500 placeholder-slate-500 disabled:opacity-50 disabled:cursor-not-allowed" placeholder="70" />
-              </div>
+              {CAMPOS_SIGNOS.map(c => (
+                <label key={c.k} className="block text-xs font-medium text-slate-400">
+                  {c.label}
+                  <input disabled={isReadOnly} type={c.tipo || 'number'} step={c.step} inputMode={c.tipo ? undefined : 'decimal'}
+                    placeholder={c.ph} value={formData.signosVitales[c.k]}
+                    onChange={(e) => setFormData({ ...formData, signosVitales: { ...formData.signosVitales, [c.k]: e.target.value } })}
+                    className="mt-1 w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 outline-none text-sm shadow-sm focus:border-cyan-500 placeholder-slate-500 disabled:opacity-50" />
+                </label>
+              ))}
+              <label className="block text-xs font-medium text-slate-400">
+                Grupo sanguíneo
+                <select disabled={isReadOnly} value={formData.signosVitales.grupoSanguineo}
+                  onChange={(e) => setFormData({ ...formData, signosVitales: { ...formData.signosVitales, grupoSanguineo: e.target.value } })}
+                  className="mt-1 w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-100 outline-none text-sm">
+                  <option value="">—</option>
+                  {['O+', 'O-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'].map(g => <option key={g}>{g}</option>)}
+                </select>
+              </label>
             </div>
+
+            <div className="mt-4 p-3 rounded-lg bg-slate-900 border border-slate-700 text-sm flex justify-between">
+              <span className="text-slate-400">IMC</span>
+              <span className={imc == null ? 'text-slate-500' : NIVEL_COLOR[claseImc.nivel]}>
+                {imc == null ? 'Ingrese peso y talla' : `${imc} kg/m² · ${claseImc.etiqueta}`}
+              </span>
+            </div>
+
+            {avisos.length > 0 && (
+              <ul className="mt-3 space-y-1" aria-live="polite">
+                {avisos.map(a => (
+                  <li key={a.texto} className={`text-xs px-3 py-1.5 rounded-md ${a.nivel === 'critico' ? 'bg-rose-500/15 text-rose-300' : 'bg-amber-500/15 text-amber-300'}`}>
+                    {a.nivel === 'critico' ? 'Crítico: ' : 'Atención: '}{a.texto}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div className="bg-slate-800 border border-slate-700 shadow-sm rounded-2xl p-6 hover-lift">

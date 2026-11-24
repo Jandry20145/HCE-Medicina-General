@@ -4,67 +4,56 @@ import com.sistema.medico.models.Antecedente;
 import com.sistema.medico.models.Paciente;
 import com.sistema.medico.repositories.AntecedenteRepository;
 import com.sistema.medico.repositories.PacienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import com.sistema.medico.services.AuditoriaService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/antecedentes")
-@CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 public class AntecedenteController {
 
-    @Autowired
-    private AntecedenteRepository antecedenteRepository;
+    private final AntecedenteRepository antecedenteRepository;
+    private final PacienteRepository pacienteRepository;
+    private final AuditoriaService auditoria;
 
-    @Autowired
-    private PacienteRepository pacienteRepository;
-
-    public static class AntecedenteDTO {
-        public Integer idPaciente;
-        public String tipoAntecedente;
-        public String enfermedadAsociada;
-        public String parentescoFamiliar;
-        public String alergiasPrincipales;
-        public String descripcionAdicional;
+    public record AntecedenteRequest(
+            @NotNull Integer idPaciente,
+            @NotBlank @Pattern(regexp = "Personal|Familiar|Patológico|Quirúrgico|Alergia", message = "Tipo de antecedente no válido") String tipoAntecedente,
+            @NotBlank(message = "Indique la enfermedad, cirugía o alérgeno") @Size(max = 150) String enfermedadAsociada,
+            @Size(max = 50) String parentescoFamiliar,
+            @Size(max = 2000) String alergiasPrincipales,
+            @Size(max = 5000) String descripcionAdicional) {
     }
 
     @GetMapping("/paciente/{idPaciente}")
-    public ResponseEntity<List<Antecedente>> getAntecedentesByPaciente(@PathVariable Integer idPaciente) {
-        List<Antecedente> antecedentes = antecedenteRepository.findByPaciente_IdPaciente(idPaciente);
-        return ResponseEntity.ok(antecedentes);
+    public List<Antecedente> listar(@PathVariable Integer idPaciente) {
+        return antecedenteRepository.findByPaciente_IdPaciente(idPaciente);
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, Object>> crearAntecedente(@RequestBody AntecedenteDTO dto) {
-        Map<String, Object> response = new HashMap<>();
-        try {
-            Optional<Paciente> pacienteOpt = pacienteRepository.findById(dto.idPaciente);
-            if (!pacienteOpt.isPresent()) {
-                response.put("error", "Paciente no encontrado");
-                return ResponseEntity.badRequest().body(response);
-            }
-
-            Antecedente ant = new Antecedente();
-            ant.setPaciente(pacienteOpt.get());
-            ant.setTipoAntecedente(dto.tipoAntecedente); // "Personal" o "Familiar"
-            ant.setEnfermedadAsociada(dto.enfermedadAsociada);
-            ant.setParentescoFamiliar(dto.parentescoFamiliar);
-            ant.setAlergiasPrincipales(dto.alergiasPrincipales);
-            ant.setDescripcionAdicional(dto.descripcionAdicional);
-
-            Antecedente guardado = antecedenteRepository.save(ant);
-            response.put("mensaje", "Antecedente registrado correctamente");
-            response.put("antecedente", guardado);
-
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            response.put("error", "Error interno al guardar antecedente: " + e.getMessage());
-            return ResponseEntity.internalServerError().body(response);
-        }
+    @ResponseStatus(HttpStatus.CREATED)
+    public Antecedente crear(@Valid @RequestBody AntecedenteRequest dto, HttpServletRequest http) {
+        Paciente paciente = pacienteRepository.findById(dto.idPaciente())
+                .orElseThrow(() -> new IllegalArgumentException("Paciente no encontrado"));
+        Antecedente ant = new Antecedente();
+        ant.setPaciente(paciente);
+        ant.setTipoAntecedente(dto.tipoAntecedente());
+        ant.setEnfermedadAsociada(dto.enfermedadAsociada().trim());
+        ant.setParentescoFamiliar(dto.parentescoFamiliar());
+        ant.setAlergiasPrincipales(dto.alergiasPrincipales());
+        ant.setDescripcionAdicional(dto.descripcionAdicional());
+        Antecedente guardado = antecedenteRepository.save(ant);
+        auditoria.registrar("ANTECEDENTE_CREADO", "paciente=" + paciente.getIdPaciente(), http);
+        return guardado;
     }
 }
