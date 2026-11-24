@@ -3,67 +3,70 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import './LoginPage.css';
 
-// Video de fondo de la cápsula ("Blue Silk", MotionSites backgrounds). Para no depender de
-// un servidor externo, descárguelo a /public y cambie esta ruta por '/acceso.mp4'.
-const VIDEO = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260815_034306_165449ef-7d2e-4e81-850f-1939c5cb442d.mp4';
+// Trazo de monitor: 6 latidos por barrido. Barrido de 4,8 s → 75 latidos por minuto.
+const ANCHO = 1200;
+const BASE = 70;
+const LATIDOS = 6;
+const BARRIDO_MS = 4800;
+const LPM = Math.round((LATIDOS * 60000) / BARRIDO_MS);
 
-const LINEAS = Array.from({ length: 14 }, (_, i) => {
-  const y = 120 + i * 62;
-  return { d: `M -80 ${y + 220} C 380 ${y + 120}, 620 ${y - 260}, 1060 ${y - 180} S 1640 ${y - 420}, 1760 ${y - 520}`, w: 1.2 + (i % 4) * 0.9, o: 0.55 + (i % 3) * 0.12 };
-});
+/** Un latido (P, QRS, T) de 200 unidades de ancho a partir de x. */
+function latido(x) {
+  return [
+    `L${x + 40} ${BASE}`,
+    `C${x + 48} ${BASE - 9} ${x + 58} ${BASE - 9} ${x + 66} ${BASE}`, // onda P
+    `L${x + 80} ${BASE}`,
+    `L${x + 86} ${BASE + 10}`, // Q
+    `L${x + 96} ${BASE - 52}`, // R
+    `L${x + 106} ${BASE + 20}`, // S
+    `L${x + 114} ${BASE}`,
+    `L${x + 128} ${BASE}`,
+    `C${x + 140} ${BASE - 16} ${x + 158} ${BASE - 16} ${x + 170} ${BASE}`, // onda T
+    `L${x + 200} ${BASE}`,
+  ].join(' ');
+}
+const TRAZO = `M0 ${BASE} ` + Array.from({ length: LATIDOS }, (_, i) => latido(i * 200)).join(' ');
 
-/** Anima la apertura: línea plana → ranura → círculo → cápsula (2.1 s). */
-function useApertura(raizRef) {
+/** Barrido de monitor: el trazo nuevo aparece detrás de un punto y borra el anterior justo delante. */
+function useMonitor(svgRef, puntoRef) {
   useLayoutEffect(() => {
-    const raiz = raizRef.current;
-    if (!raiz) return undefined;
-    const el = (nombre) => ({ current: raiz.querySelector(`[data-anim="${nombre}"]`) });
-    const [pill, velo, a, b, fondo, nav, pie, regla] = ['pill', 'velo', 'a', 'b', 'fondo', 'nav', 'pie', 'regla'].map(el);
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const movil = window.matchMedia('(max-width: 720px)').matches;
-    if (reducido) {
-      raiz.classList.add('acceso--final');
+    const svg = svgRef.current;
+    const punto = puntoRef.current;
+    if (!svg || !punto) return undefined;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      svg.style.setProperty('--x', '100%');
       return undefined;
     }
-    const fs = parseFloat(getComputedStyle(pill.current).fontSize);
-    const t = { duration: 2100, fill: 'both' };
-    const ease = 'cubic-bezier(.4,0,.2,1)';
-    const anims = [];
-    const anim = (el, frames, extra = {}) => el.current && anims.push(el.current.animate(frames, { ...t, ...extra }));
-
-    if (movil) {
-      const ancho = pill.current.getBoundingClientRect().width;
-      const alto = ancho / 1.85;
-      anim(pill, [
-        { height: '1.5px', clipPath: 'inset(0 50%)', offset: 0 },
-        { height: '1.5px', clipPath: 'inset(0 0%)', offset: 0.14 },
-        { height: `${alto * 0.1}px`, offset: 0.3 },
-        { height: `${alto * 0.55}px`, offset: 0.58 },
-        { height: `${alto}px`, clipPath: 'inset(0 0%)', offset: 1 },
-      ], { easing: ease });
-    } else {
-      anim(pill, [
-        { width: `${fs * 0.012}px`, clipPath: 'inset(50% 0)', offset: 0, easing: 'cubic-bezier(.5,0,.3,1)' },
-        { width: `${fs * 0.012}px`, clipPath: 'inset(0% 0)', offset: 0.14, easing: 'cubic-bezier(.5,0,.3,1)' },
-        { width: `${fs * 0.16}px`, offset: 0.3, easing: 'cubic-bezier(.45,0,.3,1)' },
-        { width: `${fs * 1.81}px`, offset: 0.58, easing: 'cubic-bezier(.4,0,.2,1)' },
-        { width: `${fs * 3.4}px`, clipPath: 'inset(0% 0)', offset: 1 },
-      ]);
+    // Altura del trazo para cada x, para que el punto lo siga.
+    const path = svg.querySelector('path');
+    const total = path.getTotalLength();
+    const alturas = new Float32Array(ANCHO + 1).fill(BASE);
+    for (let l = 0; l <= total; l += 1.5) {
+      const p = path.getPointAtLength(l);
+      alturas[Math.round(p.x)] = p.y;
     }
-    anim(velo, [{ opacity: 1, offset: 0 }, { opacity: 1, offset: 0.14 }, { opacity: 0, offset: 0.3 }, { opacity: 0, offset: 1 }]);
-    const eje = movil ? 'Y' : 'X';
-    anim(a, [{ transform: `translate${eje}(0.04em)`, offset: 0 }, { transform: `translate${eje}(0.02em)`, offset: 0.58 }, { transform: `translate${eje}(0)`, offset: 1 }], { easing: ease });
-    anim(b, [{ transform: `translate${eje}(-0.04em)`, offset: 0 }, { transform: `translate${eje}(-0.02em)`, offset: 0.58 }, { transform: `translate${eje}(0)`, offset: 1 }], { easing: ease });
-    anim(fondo, [{ opacity: 0, offset: 0 }, { opacity: 0, offset: 0.45 }, { opacity: 1, offset: 0.78 }, { opacity: 1, offset: 1 }]);
-    anim(nav, [{ transform: 'translateY(-140%)', offset: 0 }, { transform: 'translateY(-140%)', offset: 0.5, easing: 'cubic-bezier(.2,.8,.2,1)' }, { transform: 'translateY(0)', offset: 0.86 }, { transform: 'translateY(0)', offset: 1 }]);
-    anim(pie, [{ transform: 'translateY(160%)', opacity: 0, offset: 0 }, { transform: 'translateY(160%)', opacity: 0, offset: 0.52, easing: 'cubic-bezier(.2,.8,.2,1)' }, { transform: 'translateY(0)', opacity: 1, offset: 0.9 }, { transform: 'translateY(0)', opacity: 1, offset: 1 }]);
-    anim(regla, [{ transform: 'scaleX(0)', offset: 0 }, { transform: 'scaleX(0)', offset: 0.4 }, { transform: 'scaleX(1)', offset: 0.95 }, { transform: 'scaleX(1)', offset: 1 }]);
+    let id;
+    const inicio = performance.now();
+    const paso = (t) => {
+      const f = ((t - inicio) % BARRIDO_MS) / BARRIDO_MS;
+      const x = f * ANCHO;
+      svg.style.setProperty('--x', `${f * 100}%`);
+      punto.setAttribute('cx', x);
+      punto.setAttribute('cy', alturas[Math.round(x)]);
+      id = requestAnimationFrame(paso);
+    };
+    id = requestAnimationFrame(paso);
+    return () => cancelAnimationFrame(id);
+  }, [svgRef, puntoRef]);
+}
 
-    // Al cambiar el tamaño, se salta al estado final (el CSS ya tiene las medidas finales).
-    const fin = () => anims.forEach((x) => x.cancel());
-    window.addEventListener('resize', fin);
-    return () => { window.removeEventListener('resize', fin); fin(); };
-  }, [raizRef]);
+function useReloj() {
+  const [ahora, setAhora] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setAhora(new Date()), 15000);
+    return () => clearInterval(id);
+  }, []);
+  return ahora;
 }
 
 export const LoginPage = () => {
@@ -74,11 +77,12 @@ export const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [enviando, setEnviando] = useState(false);
+  const svgRef = useRef(null);
+  const puntoRef = useRef(null);
+  const ahora = useReloj();
+  useMonitor(svgRef, puntoRef);
 
-  const raizRef = useRef(null);
-  useApertura(raizRef);
-
-  useEffect(() => { document.title = 'Acceso · BioHCEMG'; }, []);
+  useEffect(() => { document.title = 'Acceso · HCE'; }, []);
 
   if (usuario) return <Navigate to={location.state?.from?.pathname || '/'} replace />;
 
@@ -98,62 +102,80 @@ export const LoginPage = () => {
   };
 
   const mensaje = error || aviso;
+  const fecha = ahora.toLocaleDateString('es-EC', { weekday: 'long', day: 'numeric', month: 'long' });
+  const hora = ahora.toLocaleTimeString('es-EC', { hour: '2-digit', minute: '2-digit', hour12: false });
 
   return (
-    <main className="acceso" ref={raizRef}>
-      <div className="acceso-fondo" data-anim="fondo" aria-hidden="true">
-        <svg viewBox="0 0 1680 960" preserveAspectRatio="none">
-          {LINEAS.map((l, i) => <path key={i} d={l.d} fill="none" stroke="#fff" strokeWidth={l.w} strokeOpacity={l.o} />)}
-        </svg>
-      </div>
+    <main className="acceso">
+      <section className="acceso-relato">
+        <header className="acceso-cabecera">
+          <span className="acceso-marca">HCE</span>
+          <span className="acceso-etiqueta">Medicina General</span>
+        </header>
 
-      <header className="acceso-nav" data-anim="nav">
-        <span className="acceso-marca">BioHCEMG<sup>®</sup></span>
-        <span className="acceso-nav-der">
-          <span>Medicina General</span>
-          <span aria-hidden="true">·</span>
-          <span>Acceso del personal</span>
-        </span>
-      </header>
-
-      <section className="acceso-hero">
-        <h1 className="sr-only">Acceso a la Historia Clínica Electrónica de Medicina General</h1>
-        <div className="acceso-palabra" aria-hidden="true">
-          <span className="acceso-mitad" data-anim="a">VI</span>
-          <span className="acceso-pill" data-anim="pill">
-            <video src={VIDEO} autoPlay muted loop playsInline preload="auto" />
-            <span className="acceso-velo" data-anim="velo" />
-            <svg className="acceso-icono acceso-icono--izq" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M2 12h4l2-5 4 10 2.5-6H22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <svg className="acceso-icono acceso-icono--der" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-            </svg>
-          </span>
-          <span className="acceso-mitad" data-anim="b">TAL</span>
+        <div className="acceso-titular">
+          <p className="acceso-etiqueta acceso-entra" style={{ '--d': '0.05s' }}>Historia clínica electrónica</p>
+          <h1>
+            <span className="acceso-linea"><span style={{ '--d': '0.1s' }}>Cada consulta,</span></span>
+            <span className="acceso-linea acceso-tenue"><span style={{ '--d': '0.22s' }}>completa y segura.</span></span>
+          </h1>
+          <p className="acceso-bajada acceso-entra" style={{ '--d': '0.45s' }}>
+            Triaje, nota médica, diagnóstico CIE-10 y receta en un solo registro.
+            Firmado, auditado y solo para el personal autorizado.
+          </p>
         </div>
+
+        <figure className="acceso-monitor acceso-entra" style={{ '--d': '0.6s' }} aria-hidden="true">
+          <svg ref={svgRef} viewBox={`0 0 ${ANCHO} 110`} preserveAspectRatio="none">
+            <path d={TRAZO} vectorEffect="non-scaling-stroke" />
+            <circle ref={puntoRef} r="4" cx="0" cy={BASE} />
+          </svg>
+          <figcaption>
+            <span className="acceso-latido" />
+            <span className="acceso-etiqueta">FC</span>
+            <strong>{LPM}</strong>
+            <span className="acceso-etiqueta">lpm</span>
+          </figcaption>
+        </figure>
+
+        <ol className="acceso-claves acceso-entra" style={{ '--d': '0.75s' }}>
+          <li><span>01</span>Triaje con alertas en vivo</li>
+          <li><span>02</span>Catálogo CIE-10 completo</li>
+          <li><span>03</span>Nota firmada, corregida solo con adendas</li>
+        </ol>
       </section>
 
-      <footer className="acceso-pie" data-anim="pie">
-        <p className="acceso-texto">
-          <span className="acceso-capital">C</span>ada consulta, completa y en un solo lugar: signos vitales, examen físico,
-          diagnóstico CIE-10 y tratamiento. Solo para el personal autorizado del servicio.
-        </p>
-        <span className="acceso-regla" data-anim="regla" aria-hidden="true" />
-        <form className="acceso-form" onSubmit={enviar} noValidate>
+      <section className="acceso-panel">
+        <form className="acceso-tarjeta acceso-entra" style={{ '--d': '0.3s' }} onSubmit={enviar} noValidate>
+          <div className="acceso-tarjeta-cabeza">
+            <span className="acceso-etiqueta">{fecha} · <span className="num">{hora}</span></span>
+            <h2>Acceso del personal</h2>
+            <p>Ingrese con el usuario que le asignó el administrador.</p>
+          </div>
+
           {mensaje && <p className="acceso-error" role="alert">{mensaje}</p>}
-          <label className="sr-only" htmlFor="acceso-usuario">Usuario</label>
-          <input id="acceso-usuario" className="acceso-campo" placeholder="Usuario" autoComplete="username" required
-            value={username} onChange={(e) => setUsername(e.target.value)} />
-          <label className="sr-only" htmlFor="acceso-clave">Contraseña</label>
-          <input id="acceso-clave" className="acceso-campo" type="password" placeholder="Contraseña" autoComplete="current-password" required
-            value={password} onChange={(e) => setPassword(e.target.value)} />
+
+          <label className="acceso-campo">
+            <span>Usuario</span>
+            <input autoComplete="username" required autoFocus value={username} onChange={(e) => setUsername(e.target.value)} />
+          </label>
+          <label className="acceso-campo">
+            <span>Contraseña</span>
+            <input type="password" autoComplete="current-password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+          </label>
+
           <button className="acceso-boton" disabled={enviando || !username || !password}>
-            {enviando ? 'Entrando…' : 'Entrar'}
+            {enviando ? 'Verificando…' : 'Entrar'}
             <span className="acceso-flecha" aria-hidden="true">→</span>
           </button>
+
+          <ul className="acceso-notas">
+            <li>La sesión dura 8 horas.</li>
+            <li>Tras 5 intentos fallidos el acceso se bloquea 15 minutos.</li>
+            <li>¿Olvidó su contraseña? El administrador la restablece.</li>
+          </ul>
         </form>
-      </footer>
+      </section>
     </main>
   );
 };

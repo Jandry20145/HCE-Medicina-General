@@ -25,7 +25,7 @@ export function Marco() {
   return (
     <div className="marco">
       <aside className="riel">
-        <span className="marca">BioHCEMG<sup>®</sup></span>
+        <span className="marca">HCE</span>
         <p className="etiqueta px-2.5 mt-1 mb-8 solo-escritorio">Medicina General</p>
         <nav aria-label="Menú principal" className="flex flex-col gap-1">
           {items.map((m, i) => (

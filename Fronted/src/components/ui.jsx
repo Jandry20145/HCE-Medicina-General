@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 /** Título de página: sube desde una máscara y lo acompaña el trazo de pulso (firma visual). */
 export function Encabezado({ indice, titulo, subtitulo, children }) {
-  useEffect(() => { document.title = `${titulo} · BioHCEMG`; }, [titulo]);
+  useEffect(() => { document.title = `${titulo} · HCE`; }, [titulo]);
   return (
     <header className="flex flex-wrap items-end justify-between gap-6 mb-8">
       <div className="min-w-0">

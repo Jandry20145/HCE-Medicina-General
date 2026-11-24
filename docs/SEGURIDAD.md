@@ -53,10 +53,8 @@ usuarios ficticios. Nada se probó contra servidores externos.
   de un usuario concreto fallando 5 veces, y la auditoría no distingue equipos. En un servidor Linux
   con Docker nativo se ve la IP real. Validar en el servidor definitivo mirando la columna IP de la
   auditoría tras entrar desde dos equipos distintos.
-- **Video de la portada en un CDN externo.** Cada apertura de la pantalla de acceso hace una petición
-  a `d8j0ntlcm91z4.cloudfront.net`, que ve la IP y la hora. No lleva datos clínicos. Para evitarlo,
-  copiar el video a `Fronted/public/` y cambiar la constante `VIDEO` en `LoginPage.jsx` y `media-src`
-  en `nginx.conf`.
+- ~~Video de la portada en un CDN externo~~ **Resuelto:** la portada actual no carga recursos de terceros y la CSP
+  (`media-src 'self'`) lo impide.
 
 ## Riesgos aceptados
 

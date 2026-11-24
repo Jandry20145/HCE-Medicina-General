@@ -1,191 +1,244 @@
-/* Portada de acceso. Basada en "Wild Pill" (MotionSites): una línea plana se abre en una
-   cápsula con video. Todo se mide desde --fs, el tamaño de la palabra. */
+/* Portada de acceso. Firma: trazo de monitor que barre la pantalla sobre papel milimetrado.
+   Misma paleta que la aplicación: papel, tinta y un solo acento clínico. */
 .acceso {
   --papel: #eef1f3;
   --tinta: #121a21;
   --tinta-2: #3b4650;
-  --regla: #a7b0b7;
+  --tinta-3: #6b7680;
+  --tenue: #9aa4ac;
+  --regla: rgba(18, 26, 33, 0.12);
   --acento: #0f766e;
-  --fs: min(17vh, 11vw);
+  --entrada: cubic-bezier(0.22, 1, 0.36, 1);
 
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  background: #fff;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.9fr);
+  background-color: var(--papel);
+  /* Papel de electrocardiograma, apenas visible. */
+  background-image:
+    linear-gradient(rgba(15, 118, 110, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 118, 110, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--tinta);
   font-family: 'Inter Variable', Inter, system-ui, sans-serif;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  overflow-x: clip;
 }
 .acceso ::selection { background: var(--tinta); color: #fff; }
+.acceso .num { font-variant-numeric: tabular-nums; }
 
-.acceso-fondo { position: absolute; inset: 0; background: var(--papel); }
-.acceso-fondo svg { width: 100%; height: 100%; display: block; }
-
-.acceso-nav {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 22px clamp(20px, 4vw, 56px) 0;
-  font-size: 13px;
-  font-weight: 450;
-  color: var(--tinta-2);
+.acceso-etiqueta {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
 }
-.acceso-marca { font-weight: 650; letter-spacing: -0.02em; color: var(--tinta); font-size: 15px; }
-.acceso-marca sup { font-size: 0.55em; font-weight: 500; margin-left: 1px; }
-.acceso-nav-der { display: flex; gap: 10px; }
 
-.acceso-hero { position: relative; display: grid; place-items: center; padding-bottom: 6vh; }
-.acceso-palabra {
+/* ---------- Relato (izquierda) ---------- */
+.acceso-relato {
   display: flex;
-  align-items: center;
-  gap: 0.07em;
-  font-size: var(--fs);
-  font-weight: 800;
+  flex-direction: column;
+  padding: 32px clamp(24px, 5vw, 72px) 36px;
+  min-width: 0;
+}
+.acceso-cabecera { display: flex; align-items: baseline; gap: 14px; }
+.acceso-marca { font-size: 17px; font-weight: 650; letter-spacing: -0.03em; }
+
+.acceso-titular { margin-top: auto; padding-top: 48px; }
+.acceso-titular h1 {
+  margin: 16px 0 0;
+  font-size: clamp(40px, 5.1vw, 88px);
+  font-weight: 500;
   letter-spacing: -0.045em;
-  line-height: 0.8;
-  user-select: none;
+  line-height: 0.98;
 }
-.acceso-mitad { display: block; }
-
-.acceso-pill {
-  position: relative;
-  display: block;
-  width: 3.4em;
-  height: 1.81em;
-  font-size: inherit;
-  border-radius: 999px;
-  overflow: hidden;
-  background: #cfd8de;
-  box-shadow: 0 4px 14px rgba(18, 26, 33, 0.12);
-}
-.acceso-pill video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-.acceso-velo { position: absolute; inset: 0; background: #b9c1c7; opacity: 0; }
-.acceso-icono {
-  position: absolute;
-  top: 50%;
-  width: max(16px, 0.12em);
-  height: max(16px, 0.12em);
-  transform: translateY(-50%);
-  color: #fff;
-  opacity: 0.85;
-}
-.acceso-icono--izq { left: 0.22em; }
-.acceso-icono--der { right: 0.22em; }
-
-.acceso-pie {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  gap: clamp(16px, 2.5vw, 40px);
-  padding: 0 clamp(20px, 4vw, 56px) clamp(24px, 5vh, 56px);
-}
-.acceso-texto {
-  max-width: 25rem;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
+.acceso-linea { display: block; overflow: hidden; padding-bottom: 0.08em; white-space: nowrap; }
+.acceso-linea > span { display: inline-block; animation: acceso-sube 1s var(--entrada) var(--d, 0s) both; }
+.acceso-tenue { color: var(--tenue); }
+.acceso-bajada {
+  max-width: 30rem;
+  margin: 22px 0 0;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--tinta-2);
 }
-.acceso-capital {
-  float: left;
-  font-size: 2.35em;
-  line-height: 0.9;
-  font-weight: 650;
-  margin: 0.06em 0.08em 0 0;
-  color: var(--tinta);
+
+.acceso-monitor { position: relative; margin: 64px 0 0; }
+.acceso-monitor svg { display: block; width: 100%; height: clamp(90px, 13vh, 130px); overflow: visible; --x: 0%; }
+.acceso-monitor path {
+  fill: none;
+  stroke: var(--acento);
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  /* El trazo existe detrás del punto; justo delante, un hueco "borra" el barrido anterior. */
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 var(--x), transparent calc(var(--x) + 0.5%), transparent calc(var(--x) + 7%), rgba(0, 0, 0, 0.35) calc(var(--x) + 9%), rgba(0, 0, 0, 0.35) 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 var(--x), transparent calc(var(--x) + 0.5%), transparent calc(var(--x) + 7%), rgba(0, 0, 0, 0.35) calc(var(--x) + 9%), rgba(0, 0, 0, 0.35) 100%);
 }
-.acceso-regla {
-  flex: 1;
-  height: 1px;
-  margin-bottom: 22px;
-  background: var(--regla);
-  transform-origin: center;
+.acceso-monitor circle { fill: var(--acento); filter: drop-shadow(0 0 6px rgba(15, 118, 110, 0.55)); }
+.acceso-monitor figcaption {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.acceso-monitor figcaption strong {
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--acento);
+}
+.acceso-latido {
+  align-self: center;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--acento);
+  animation: acceso-latido 0.8s ease-out infinite;
 }
 
-.acceso-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; max-width: 34rem; }
-.acceso-campo {
-  width: 11.5rem;
-  height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(18, 26, 33, 0.16);
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(8px);
+.acceso-claves {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--regla);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--tinta-2);
+}
+.acceso-claves span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--acento);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Panel de acceso (derecha) ---------- */
+.acceso-panel {
+  display: grid;
+  place-items: center;
+  padding: 32px clamp(20px, 3.5vw, 56px);
+  border-left: 1px solid var(--regla);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(2px);
+}
+.acceso-tarjeta {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid var(--regla);
+  box-shadow: 0 1px 2px rgba(18, 26, 33, 0.04), 0 18px 48px rgba(18, 26, 33, 0.08);
+}
+.acceso-tarjeta-cabeza { margin-bottom: 6px; }
+.acceso-tarjeta-cabeza .acceso-etiqueta { letter-spacing: 0.12em; }
+.acceso-tarjeta h2 { margin: 14px 0 6px; font-size: 26px; font-weight: 550; letter-spacing: -0.03em; }
+.acceso-tarjeta-cabeza p { margin: 0; font-size: 14px; color: var(--tinta-3); line-height: 1.5; }
+
+.acceso-campo { display: flex; flex-direction: column; gap: 7px; }
+.acceso-campo span { font-size: 12.5px; font-weight: 500; color: var(--tinta-2); }
+.acceso-campo input {
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(18, 26, 33, 0.18);
+  background: #fff;
   color: var(--tinta);
   font: inherit;
-  font-size: 14px;
+  font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.acceso-campo::placeholder { color: #7a858e; }
-.acceso-campo:focus-visible, .acceso-boton:focus-visible {
-  outline: 2px solid var(--acento);
-  outline-offset: 2px;
-}
+.acceso-campo input:focus { outline: none; border-color: var(--acento); box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12); }
+
 .acceso-boton {
-  display: inline-flex;
+  margin-top: 6px;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  height: 44px;
+  justify-content: space-between;
+  height: 50px;
   padding: 0 8px 0 22px;
   border: 0;
   border-radius: 999px;
   background: var(--tinta);
   color: #fff;
   font: inherit;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   cursor: pointer;
-  transition: opacity 0.2s cubic-bezier(.4, 0, .2, 1);
+  transition: background 0.2s, transform 0.15s;
 }
-.acceso-boton:disabled { opacity: 0.55; cursor: default; }
+.acceso-boton:hover:not(:disabled) { background: #000; }
+.acceso-boton:active:not(:disabled) { transform: scale(0.98); }
+.acceso-boton:disabled { opacity: 0.45; cursor: default; }
+.acceso-boton:focus-visible, .acceso-campo input:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
 .acceso-flecha {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: #fff;
   color: var(--tinta);
-  transition: transform 0.25s cubic-bezier(.22, 1, .36, 1);
+  transition: transform 0.25s var(--entrada);
 }
-.acceso-boton:not(:disabled):hover .acceso-flecha { transform: translateX(2px) rotate(-45deg); }
+.acceso-boton:hover:not(:disabled) .acceso-flecha { transform: translateX(2px) rotate(-45deg); }
+
 .acceso-error {
-  flex-basis: 100%;
-  margin: 0 0 2px;
-  text-align: right;
-  font-size: 13px;
-  color: #b42318;
+  margin: 0;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: #fdecea;
+  color: #8a1c13;
+  font-size: 13.5px;
+}
+.acceso-notas {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--regla);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--tinta-3);
 }
 
-/* Sin animación: estado final directo. */
-.acceso--final .acceso-velo { opacity: 0; }
-
-@media (max-width: 720px) {
-  .acceso { --fs: min(34vw, 16.5vh); overflow-y: auto; }
-  .acceso-nav-der span:not(:last-child) { display: none; }
-  .acceso-palabra { flex-direction: column; gap: 0.08em; }
-  .acceso-pill { width: calc(100vw - 40px); height: calc((100vw - 40px) / 1.85); font-size: inherit; }
-  .acceso-icono { width: 18px; height: 18px; }
-  .acceso-icono--izq { left: 18px; }
-  .acceso-icono--der { right: 18px; }
-  .acceso-pie { flex-direction: column; align-items: stretch; padding: 0 20px 24px; gap: 14px; }
-  .acceso-texto { max-width: none; font-size: 13px; }
-  .acceso-regla { display: none; }
-  .acceso-form { max-width: none; justify-content: stretch; }
-  .acceso-campo { flex: 1 1 100%; width: auto; }
-  .acceso-boton { flex: 1 1 100%; justify-content: space-between; }
-  .acceso-error { text-align: left; }
-}
+/* ---------- Movimiento ---------- */
+.acceso-entra { animation: acceso-aparece 0.9s var(--entrada) var(--d, 0s) both; }
+@keyframes acceso-sube { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes acceso-aparece { from { opacity: 0; transform: translateY(16px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes acceso-latido { 0% { box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.45); } 100% { box-shadow: 0 0 0 9px rgba(15, 118, 110, 0); } }
 
 @media (prefers-reduced-motion: reduce) {
-  .acceso-pill video { display: none; }
-  .acceso-pill { background: linear-gradient(120deg, #cfdcea, #e9eef5 55%, #c8d3e6); }
+  .acceso-entra, .acceso-linea > span, .acceso-latido { animation: none; }
+  .acceso-monitor path { -webkit-mask-image: none; mask-image: none; }
+  .acceso-monitor circle { display: none; }
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 960px) {
+  .acceso { grid-template-columns: 1fr; }
+  .acceso-relato { padding-bottom: 8px; }
+  .acceso-titular { margin-top: 0; padding-top: 36px; }
+  .acceso-linea { white-space: normal; }
+  .acceso-monitor { margin-top: 28px; }
+  .acceso-claves, .acceso-bajada { display: none; }
+  .acceso-titular { padding-top: 28px; }
+  .acceso-monitor { margin-top: 52px; }
+  .acceso-monitor svg { height: 72px; }
+  .acceso-panel { border-left: 0; background: transparent; backdrop-filter: none; padding: 16px 20px 32px; }
+  .acceso-tarjeta { max-width: none; padding: 24px; border-radius: 22px; }
 }
