@@ -49,6 +49,7 @@ public class AdminController {
         nuevo.setRol(dto.rol());
         nuevo.setNombresCompletos(dto.nombresCompletos().trim());
         nuevo.setEstado(true);
+        nuevo.setRegistroProfesional(vacioANull(dto.registroProfesional()));
         usuarioRepository.save(nuevo);
         auditoria.registrar("USUARIO_CREADO", "usuario=" + nuevo.getUsername() + " rol=" + nuevo.getRol(), http);
         return nuevo;
@@ -65,6 +66,7 @@ public class AdminController {
         usuario.setRol(dto.rol());
         usuario.setNombresCompletos(dto.nombresCompletos().trim());
         usuario.setEstado(dto.activo());
+        usuario.setRegistroProfesional(vacioANull(dto.registroProfesional()));
         usuarioRepository.save(usuario);
         auditoria.registrar("USUARIO_ACTUALIZADO",
                 "usuario=" + usuario.getUsername() + " rol=" + dto.rol() + " activo=" + dto.activo(), http);
@@ -84,6 +86,10 @@ public class AdminController {
         usuarioRepository.save(usuario);
         auditoria.registrar("PASSWORD_RESTABLECIDA", "usuario=" + usuario.getUsername(), http);
         return Map.of("mensaje", "Contraseña restablecida");
+    }
+
+    private static String vacioANull(String valor) {
+        return valor == null || valor.isBlank() ? null : valor.trim();
     }
 
     private Usuario buscar(Integer id) {

@@ -37,8 +37,11 @@ está vacío (unos 11 000 códigos).
 
 ## Usuarios y contraseñas
 
-- Roles: **Admin** (usuarios y auditoría), **Admisión** (registra y edita pacientes),
-  **Enfermería** (ve historias y registra antecedentes), **Médico** (todo lo clínico y el PDF).
+- Roles: **Administración** (usuarios, configuración y auditoría, sin acceso clínico),
+  **Enfermería** (expedientes, agenda, triaje, procedimientos) y **Médico** (nota, diagnóstico,
+  receta, órdenes, firma, certificados). Los antiguos usuarios de Admisión pasan a Enfermería.
+- A los médicos, registre su **registro profesional** en Usuarios: se imprime en recetas y certificados.
+- Horario de atención, duración de citas y datos impresos en documentos: **Configuración**.
 - Tras 5 intentos fallidos seguidos, ese usuario queda bloqueado 15 minutos desde esa dirección.
   Además nginx acepta como máximo 10 intentos de login por minuto por dirección.
 - **Contraseña olvidada:** un administrador la restablece en **Usuarios**. Sus sesiones abiertas se

@@ -31,4 +31,8 @@ public class Usuario {
 
     @Column(name = "estado", columnDefinition = "TINYINT(1) DEFAULT 1")
     private Boolean estado;
+
+    /** Registro profesional que se imprime en recetas y certificados. */
+    @Column(name = "registro_profesional", length = 50)
+    private String registroProfesional;
 }

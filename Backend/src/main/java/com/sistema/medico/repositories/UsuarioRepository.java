@@ -12,4 +12,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     Optional<Usuario> findByUsername(String username);
 
     List<Usuario> findAllByOrderByUsernameAsc();
+
+    long countByEstadoTrue();
 }

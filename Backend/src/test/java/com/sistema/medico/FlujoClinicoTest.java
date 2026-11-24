@@ -39,23 +39,23 @@ class FlujoClinicoTest extends ApiTestBase {
                                   "saturacionOxigeno":97,"pesoKg":65.5,"tallaCm":162},
                  "examenFisico":[{"regionAnatomica":"Cabeza y Cuello","hallazgos":"Faringe eritematosa"}],
                  "diagnosticos":[{"idCie10":%s,"tipoDiagnostico":"Presuntivo","condicionDiagnostico":"Principal"}],
-                 "tratamientos":[{"nombreMedicamento":"Paracetamol 500mg","indicacionesDosis":"1 tableta cada 8 horas por 3 días"}]%s}
+                 "tratamientos":[{"nombreMedicamento":"Paracetamol","formaFarmaceutica":"Tableta","concentracion":"500 mg","dosis":"1 tableta","via":"Oral","frecuencia":"Cada 8 horas","duracion":"3 días","cantidad":"9"}]%s}
                 """.formatted(idHistoria, "%s", extra);
     }
 
     @Test
-    void admisionCreaPacienteConHistoriaYNumeroAsignadoPorElServidor() throws Exception {
-        Cookie admision = sesion("admision.prueba");
-        Integer id = crearPaciente(admision, "0102030400");
+    void enfermeriaCreaPacienteConHistoriaYNumeroAsignadoPorElServidor() throws Exception {
+        Cookie enfermeria = sesion("enfermeria.prueba");
+        Integer id = crearPaciente(enfermeria, "0102030400");
 
         assertThat(historiaRepository.findByPaciente_IdPaciente(id)).isPresent();
-        mockMvc.perform(get("/api/pacientes/" + id).cookie(admision))
+        mockMvc.perform(get("/api/pacientes/" + id).cookie(enfermeria))
                 .andExpect(jsonPath("$.numeroHistoriaClinica").value(String.format("HC-%05d", id)));
 
         // La misma cédula no se registra dos veces y una cédula inválida se rechaza.
-        mockMvc.perform(post("/api/pacientes").cookie(admision).contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(post("/api/pacientes").cookie(enfermeria).contentType(MediaType.APPLICATION_JSON)
                 .content(pacienteJson("0102030400"))).andExpect(status().isBadRequest());
-        mockMvc.perform(post("/api/pacientes").cookie(admision).contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(post("/api/pacientes").cookie(enfermeria).contentType(MediaType.APPLICATION_JSON)
                         .content(pacienteJson("1234567890")))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.error").value("La cédula ingresada no es válida."));

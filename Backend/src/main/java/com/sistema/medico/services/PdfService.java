@@ -169,7 +169,7 @@ public class PdfService {
             card.setSpacingAfter(10f);
 
             // Cabecera Consulta
-            PdfPCell cHead = new PdfPCell(new Paragraph("Fecha: " + consulta.getFechaHoraAtencion().format(formatter) + " | Médico ID: " + consulta.getMedico().getIdUsuario(), boldTextFont));
+            PdfPCell cHead = new PdfPCell(new Paragraph("Fecha: " + consulta.getFechaHoraAtencion().format(formatter) + " | " + consulta.getEstadoConsulta() + " | Médico: " + (consulta.getMedico() != null ? consulta.getMedico().getNombresCompletos() : "—"), boldTextFont));
             cHead.setBackgroundColor(new Color(230, 240, 250));
             cHead.setPadding(8f);
             cHead.setBorderColor(new Color(200, 200, 200));

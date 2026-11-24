@@ -30,6 +30,16 @@ class CedulaEcuatorianaTest {
     }
 
     @Test
+    void cantidadEnLetrasParaLaReceta() {
+        assertThat(DocumentoPdfService.enLetras("9")).isEqualTo("nueve");
+        assertThat(DocumentoPdfService.enLetras("21")).isEqualTo("veintiuno");
+        assertThat(DocumentoPdfService.enLetras("45")).isEqualTo("cuarenta y cinco");
+        assertThat(DocumentoPdfService.enLetras("100")).isEqualTo("cien");
+        assertThat(DocumentoPdfService.enLetras("115")).isEqualTo("ciento quince");
+        assertThat(DocumentoPdfService.enLetras("2030")).isEqualTo("dos mil treinta");
+    }
+
+    @Test
     void reconoceHashesBcrypt() {
         assertThat(DatosIniciales.esBcrypt(new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder().encode("x"))).isTrue();
         assertThat(DatosIniciales.esBcrypt("1234")).isFalse();

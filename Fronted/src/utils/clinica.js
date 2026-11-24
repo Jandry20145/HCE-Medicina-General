@@ -93,3 +93,6 @@ export function cedulaValida(cedula) {
   }
   return (10 - (suma % 10)) % 10 === Number(cedula[9]);
 }
+
+/** Formulario de signos vitales vacío. */
+export const SIGNOS_VACIOS = { presionArterial: '', pulso: '', frecuenciaRespiratoria: '', temperatura: '', saturacionOxigeno: '', pesoKg: '', tallaCm: '', grupoSanguineo: '' };

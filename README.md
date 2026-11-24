@@ -26,12 +26,14 @@ Operación diaria (respaldos, actualización, HTTPS, problemas frecuentes):
 
 ## Roles
 
-| Rol | Puede |
-|---|---|
-| Admin | gestionar usuarios, ver la auditoría, registrar y editar pacientes |
-| Admisión | registrar y editar pacientes |
-| Enfermería | ver historias y consultas, registrar antecedentes |
-| Médico | todo lo anterior salvo usuarios/auditoría, registrar consultas, descargar el PDF |
+| Rol | Puede | No puede |
+|---|---|---|
+| Enfermería | expediente y antecedentes, agenda y llegada, triaje con signos vitales, procedimientos y notas de enfermería, leer historias | diagnosticar, prescribir, firmar, certificados |
+| Médico | todo lo clínico: nota, CIE-10, receta, órdenes, firma y adendas, certificados, PDF | usuarios y configuración |
+| Administración | usuarios, configuración del establecimiento, auditoría, respaldos | ver o escribir información clínica |
+
+Recorrido: cita → llegada → triaje (enfermería) → nota → firma (médico). Una nota firmada no se edita:
+se corrige con adendas. Detalle en [docs/ESPECIFICACION_HCE_ECUADOR.md](docs/ESPECIFICACION_HCE_ECUADOR.md).
 
 El servidor comprueba cada permiso (`Backend/.../config/SecurityConfig.java`); el frontend solo
 oculta lo que no corresponde.
@@ -65,4 +67,5 @@ Cada cambio de esquema va en un archivo nuevo `V<n>__descripcion.sql` en
 - [docs/adr/ADR-001](docs/adr/ADR-001-evolucion-a-nivel-hce-pediatrica.md): por qué esta arquitectura.
 - [docs/SEGURIDAD.md](docs/SEGURIDAD.md): revisión de seguridad, hallazgos y riesgos aceptados.
 - [docs/OPERACION.md](docs/OPERACION.md): instalación, respaldos, HTTPS, auditoría.
+- [docs/ESPECIFICACION_HCE_ECUADOR.md](docs/ESPECIFICACION_HCE_ECUADOR.md): especificación integral, marco legal ecuatoriano y plan de piloto.
 - [Documentacion_Tecnica.md](Documentacion_Tecnica.md): requerimientos y diagramas del reto original.

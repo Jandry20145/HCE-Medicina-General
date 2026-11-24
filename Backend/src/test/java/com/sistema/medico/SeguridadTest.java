@@ -79,22 +79,34 @@ class SeguridadTest extends ApiTestBase {
 
     @Test
     void permisosPorRol() throws Exception {
-        Cookie admision = sesion("admision.prueba");
+        Cookie admin = sesion("admin.prueba");
         Cookie enfermeria = sesion("enfermeria.prueba");
+        Cookie medico = sesion("medico.prueba");
 
-        // Admisión registra pacientes pero no ve la historia clínica ni crea consultas.
-        mockMvc.perform(get("/api/pacientes").cookie(admision)).andExpect(status().isOk());
-        mockMvc.perform(get("/api/historia-clinica/paciente/1").cookie(admision)).andExpect(status().isForbidden());
-        mockMvc.perform(post("/api/consultas").cookie(admision).contentType(MediaType.APPLICATION_JSON).content("{}"))
+        // Administración: sin acceso a información clínica (secreto médico).
+        mockMvc.perform(get("/api/pacientes").cookie(admin)).andExpect(status().isForbidden());
+        mockMvc.perform(get("/api/historia-clinica/paciente/1").cookie(admin)).andExpect(status().isForbidden());
+        mockMvc.perform(get("/api/consultas/pendientes").cookie(admin)).andExpect(status().isForbidden());
+        mockMvc.perform(get("/api/citas").cookie(admin)).andExpect(status().isForbidden());
+        mockMvc.perform(get("/api/configuracion").cookie(admin)).andExpect(status().isOk());
+
+        // Enfermería: expediente, agenda y triaje sí; diagnosticar, prescribir, firmar y PDF no.
+        mockMvc.perform(get("/api/pacientes").cookie(enfermeria)).andExpect(status().isOk());
+        mockMvc.perform(get("/api/citas").cookie(enfermeria)).andExpect(status().isOk());
+        mockMvc.perform(post("/api/consultas").cookie(enfermeria).contentType(MediaType.APPLICATION_JSON).content("{}"))
                 .andExpect(status().isForbidden());
-
-        // Enfermería no crea pacientes ni consultas, ni descarga el PDF.
-        mockMvc.perform(post("/api/pacientes").cookie(enfermeria).contentType(MediaType.APPLICATION_JSON)
-                .content(pacienteJson(CEDULA_VALIDA))).andExpect(status().isForbidden());
+        mockMvc.perform(post("/api/consultas/1/firmar").cookie(enfermeria)).andExpect(status().isForbidden());
+        mockMvc.perform(post("/api/consultas/1/certificados").cookie(enfermeria).contentType(MediaType.APPLICATION_JSON)
+                .content("{}")).andExpect(status().isForbidden());
+        mockMvc.perform(get("/api/catalogos/cie10/buscar?q=J0").cookie(enfermeria)).andExpect(status().isForbidden());
         mockMvc.perform(get("/api/pdf/historia/1").cookie(enfermeria)).andExpect(status().isForbidden());
+        mockMvc.perform(put("/api/admin/configuracion").cookie(enfermeria).contentType(MediaType.APPLICATION_JSON)
+                .content("{}")).andExpect(status().isForbidden());
 
-        // Nadie salvo Admin entra al panel de administración.
-        mockMvc.perform(get("/api/admin/usuarios").cookie(sesion("medico.prueba"))).andExpect(status().isForbidden());
+        // Médico: lee procedimientos de enfermería pero no los registra; sin panel de administración.
+        mockMvc.perform(post("/api/procedimientos").cookie(medico).contentType(MediaType.APPLICATION_JSON)
+                .content("{}")).andExpect(status().isForbidden());
+        mockMvc.perform(get("/api/admin/usuarios").cookie(medico)).andExpect(status().isForbidden());
     }
 
     @Test
@@ -110,14 +122,14 @@ class SeguridadTest extends ApiTestBase {
     void usuarioDesactivadoPierdeLaSesionAbierta() throws Exception {
         Cookie admin = sesion("admin.prueba");
         mockMvc.perform(post("/api/admin/usuarios").cookie(admin).contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"username\":\"temporal\",\"password\":\"clave_temporal\",\"rol\":\"Admision\",\"nombresCompletos\":\"Temporal\"}"))
+                        .content("{\"username\":\"temporal\",\"password\":\"clave_temporal\",\"rol\":\"Enfermeria\",\"nombresCompletos\":\"Temporal\"}"))
                 .andExpect(status().isCreated());
         Cookie temporal = sesion("temporal");
         mockMvc.perform(get("/api/auth/me").cookie(temporal)).andExpect(status().isOk());
 
         Integer id = usuarioRepository.findByUsername("temporal").orElseThrow().getIdUsuario();
         mockMvc.perform(put("/api/admin/usuarios/" + id).cookie(admin).contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"rol\":\"Admision\",\"nombresCompletos\":\"Temporal\",\"activo\":false}"))
+                        .content("{\"rol\":\"Enfermeria\",\"nombresCompletos\":\"Temporal\",\"activo\":false}"))
                 .andExpect(status().isOk());
 
         mockMvc.perform(get("/api/auth/me").cookie(temporal)).andExpect(status().isUnauthorized());

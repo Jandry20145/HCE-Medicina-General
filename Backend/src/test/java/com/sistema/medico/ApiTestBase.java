@@ -29,12 +29,13 @@ public abstract class ApiTestBase {
     @Autowired protected CatalogoCie10Repository cie10Repository;
     @Autowired protected PasswordEncoder passwordEncoder;
     @Autowired protected JwtService jwtService;
+    @Autowired protected com.sistema.medico.repositories.ConfiguracionRepository configuracionRepository;
 
     protected Integer idCie10;
 
     @BeforeEach
     void datosBase() {
-        for (String rol : new String[]{"Admision", "Enfermeria", "Medico"}) {
+        for (String rol : new String[]{"Enfermeria", "Medico"}) {
             String username = rol.toLowerCase() + ".prueba";
             if (usuarioRepository.findByUsername(username).isEmpty()) {
                 Usuario u = new Usuario();
@@ -45,6 +46,15 @@ public abstract class ApiTestBase {
                 u.setEstado(true);
                 usuarioRepository.save(u);
             }
+        }
+        if (configuracionRepository.findById(1).isEmpty()) {
+            com.sistema.medico.models.Configuracion c = new com.sistema.medico.models.Configuracion();
+            c.setId(1);
+            c.setNombreEstablecimiento("Consultorio de prueba");
+            c.setHoraApertura(java.time.LocalTime.of(0, 0));
+            c.setHoraCierre(java.time.LocalTime.of(23, 59));
+            c.setDuracionCitaMin(20);
+            configuracionRepository.save(c);
         }
         idCie10 = cie10Repository.findAll().stream().findFirst().map(CatalogoCie10::getIdCie10).orElseGet(() -> {
             CatalogoCie10 c = new CatalogoCie10();

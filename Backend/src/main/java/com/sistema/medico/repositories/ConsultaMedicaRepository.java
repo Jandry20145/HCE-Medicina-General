@@ -17,4 +17,8 @@ public interface ConsultaMedicaRepository extends JpaRepository<ConsultaMedica, 
     long countByFechaHoraAtencionBetween(LocalDateTime desde, LocalDateTime hasta);
 
     List<ConsultaMedica> findTop5ByOrderByFechaHoraAtencionDesc();
+
+    List<ConsultaMedica> findByEstadoConsultaInOrderByFechaHoraAtencionAsc(List<String> estados);
+
+    long countByEstadoConsulta(String estado);
 }

@@ -18,8 +18,9 @@ public class ConsultaMedica {
     @JoinColumn(name = "id_historia_clinica", nullable = false)
     private HistoriaClinica historiaClinica;
 
+    /** Null mientras la consulta está en triaje (todavía sin médico). */
     @ManyToOne
-    @JoinColumn(name = "id_medico", nullable = false)
+    @JoinColumn(name = "id_medico")
     private Usuario medico;
 
     @Column(name = "fecha_hora_atencion")
@@ -42,6 +43,23 @@ public class ConsultaMedica {
 
     @Column(name = "proximo_control")
     private java.time.LocalDate proximoControl;
+
+    @Column(name = "revision_sistemas", columnDefinition = "TEXT")
+    private String revisionSistemas;
+
+    @Column(name = "nota_enfermeria", columnDefinition = "TEXT")
+    private String notaEnfermeria;
+
+    @Column(name = "alergias_reportadas", length = 500)
+    private String alergiasReportadas;
+
+    /** Fecha de firma. Una consulta firmada no se modifica: solo admite adendas. */
+    @Column(name = "firmada_en")
+    private LocalDateTime firmadaEn;
+
+    public static final String TRIAJE = "Triaje";
+    public static final String BORRADOR = "Borrador";
+    public static final String FIRMADA = "Firmada";
 
     @PrePersist
     protected void onCreate() {

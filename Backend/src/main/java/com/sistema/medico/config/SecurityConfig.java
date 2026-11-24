@@ -25,21 +25,18 @@ import java.util.List;
 
 /**
  * Quién puede hacer qué. Es la única fuente de verdad de los permisos: el frontend solo
- * oculta botones, nunca autoriza.
+ * oculta botones, nunca autoriza. Ver docs/ESPECIFICACION_HCE_ECUADOR.md §4.3.
  *
- * | Rol        | Pacientes        | Antecedentes / HCE / consultas | Nueva consulta, PDF, CIE-10 | Usuarios y auditoría |
- * |------------|------------------|--------------------------------|-----------------------------|----------------------|
- * | Admin      | ver, crear, editar | —                            | —                           | sí                   |
- * | Admision   | ver, crear, editar | —                            | —                           | —                    |
- * | Enfermeria | ver              | ver y registrar antecedentes   | —                           | —                    |
- * | Medico     | ver, crear, editar | ver y registrar              | sí                          | —                    |
+ * - Enfermería: pacientes, antecedentes, agenda, triaje, procedimientos; lee historias y consultas.
+ *   No diagnostica, no prescribe, no firma ni emite certificados.
+ * - Médico: todo lo clínico, firma, adendas, órdenes, certificados y PDF.
+ * - Admin: usuarios, configuración y auditoría. Sin acceso a información clínica (secreto médico).
  */
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
 
     private static final String ADMIN = "ADMIN";
-    private static final String ADMISION = "ADMISION";
     private static final String ENFERMERIA = "ENFERMERIA";
     private static final String MEDICO = "MEDICO";
 
@@ -60,15 +57,22 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/api/auth/login", "/api/auth/logout").permitAll()
                         .requestMatchers(HttpMethod.GET, "/actuator/health").permitAll()
+                        // Un 403 se reenvía a /error sin sesión (filtro stateless): si /error no fuese
+                        // público, llegaría al navegador como 401 y el frontend cerraría la sesión.
+                        .dispatcherTypeMatchers(jakarta.servlet.DispatcherType.ERROR).permitAll()
+                        .requestMatchers("/error").permitAll()
                         .requestMatchers("/api/auth/**", "/api/estadisticas").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/api/configuracion").authenticated()
                         .requestMatchers("/api/admin/**").hasRole(ADMIN)
 
-                        .requestMatchers(HttpMethod.GET, "/api/pacientes/**").hasAnyRole(ADMIN, ADMISION, ENFERMERIA, MEDICO)
-                        .requestMatchers("/api/pacientes/**").hasAnyRole(ADMIN, ADMISION, MEDICO)
-
-                        .requestMatchers("/api/antecedentes/**", "/api/historia-clinica/**").hasAnyRole(ENFERMERIA, MEDICO)
+                        .requestMatchers("/api/pacientes/**", "/api/antecedentes/**", "/api/historia-clinica/**",
+                                "/api/citas/**").hasAnyRole(ENFERMERIA, MEDICO)
+                        .requestMatchers(HttpMethod.GET, "/api/procedimientos/**").hasAnyRole(ENFERMERIA, MEDICO)
+                        .requestMatchers("/api/procedimientos/**").hasRole(ENFERMERIA)
+                        .requestMatchers(HttpMethod.POST, "/api/consultas/triaje").hasAnyRole(ENFERMERIA, MEDICO)
                         .requestMatchers(HttpMethod.GET, "/api/consultas/**").hasAnyRole(ENFERMERIA, MEDICO)
-                        .requestMatchers("/api/consultas/**", "/api/pdf/**", "/api/catalogos/**").hasRole(MEDICO)
+                        .requestMatchers("/api/consultas/**", "/api/ordenes/**", "/api/pdf/**", "/api/catalogos/**")
+                        .hasRole(MEDICO)
 
                         .anyRequest().denyAll())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

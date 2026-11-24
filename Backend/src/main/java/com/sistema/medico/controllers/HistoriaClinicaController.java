@@ -22,6 +22,8 @@ public class HistoriaClinicaController {
     private final HistoriaClinicaRepository historiaClinicaRepository;
     private final ConsultaMedicaRepository consultaMedicaRepository;
     private final AuditoriaService auditoria;
+    private final com.sistema.medico.repositories.ProcedimientoEnfermeriaRepository procedimientoRepository;
+    private final com.sistema.medico.repositories.CitaRepository citaRepository;
 
     /** Paciente, expediente y consultas (la más reciente primero). Cada apertura queda auditada. */
     @GetMapping("/paciente/{idPaciente}")
@@ -34,6 +36,8 @@ public class HistoriaClinicaController {
         r.put("paciente", hc.getPaciente());
         r.put("historia_clinica", hc);
         r.put("consultas", consultaMedicaRepository.findByHistoriaClinicaOrderByFechaHoraAtencionDesc(hc));
+        r.put("procedimientos", procedimientoRepository.findByPaciente_IdPacienteOrderByFechaDesc(idPaciente));
+        r.put("citas", citaRepository.findByPaciente_IdPacienteOrderByFechaHoraDesc(idPaciente));
         return r;
     }
 }

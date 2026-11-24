@@ -22,13 +22,15 @@ public record ConsultaRequest(
         @NotNull(message = "Falta la historia clínica") Integer idHistoriaClinica,
         @NotBlank(message = "El motivo de consulta es obligatorio") @Size(max = 5000) String motivoConsulta,
         @Size(max = 10000) String enfermedadActual,
+        @Size(max = 10000) String revisionSistemas,
         @Size(max = 10000) String evolucion,
         @Size(max = 10000) String recomendaciones,
         LocalDate proximoControl,
         @Valid SignosVitales signosVitales,
         @Valid @Size(max = 30) List<Examen> examenFisico,
         @Valid @Size(max = 20) List<Diagnostico> diagnosticos,
-        @Valid @Size(max = 30) List<Tratamiento> tratamientos) {
+        @Valid @Size(max = 30) List<Tratamiento> tratamientos,
+        @Valid @Size(max = 30) List<OrdenNueva> ordenes) {
 
     public record SignosVitales(
             @DecimalMin(value = "30.0", message = "Temperatura fuera de rango (30-45 °C)")
@@ -54,10 +56,25 @@ public record ConsultaRequest(
             @Size(max = 5000) String descripcionClinica) {
     }
 
+    /** Receta por DCI con los campos mínimos (AM 00031-2020; especificación §7). */
     public record Tratamiento(
             Integer idMedicamento,
             @Size(max = 50) String codigoMedicamento,
-            @Size(max = 255) String nombreMedicamento,
-            @NotBlank(message = "Indique la dosis e indicaciones") @Size(max = 5000) String indicacionesDosis) {
+            @NotBlank(message = "Indique el principio activo (DCI)") @Size(max = 255) String nombreMedicamento,
+            @NotBlank(message = "Indique la forma farmacéutica") @Size(max = 60) String formaFarmaceutica,
+            @NotBlank(message = "Indique la concentración") @Size(max = 60) String concentracion,
+            @NotBlank(message = "Indique la dosis") @Size(max = 60) String dosis,
+            @NotBlank(message = "Indique la vía") @Size(max = 40) String via,
+            @NotBlank(message = "Indique la frecuencia") @Size(max = 60) String frecuencia,
+            @NotBlank(message = "Indique la duración") @Size(max = 60) String duracion,
+            @NotBlank(message = "Indique la cantidad") @Pattern(regexp = "^\\d{1,4}$", message = "La cantidad es un número entero") String cantidad,
+            @Size(max = 5000) String indicacionesDosis) {
+    }
+
+    public record OrdenNueva(
+            @NotBlank @Pattern(regexp = "Laboratorio|Imagen|Interconsulta|Procedimiento", message = "Tipo de orden no válido") String tipo,
+            @NotBlank(message = "Describa la orden") @Size(max = 255) String descripcion,
+            @Size(max = 500) String indicacion,
+            @NotBlank @Pattern(regexp = "Rutina|Urgente", message = "Prioridad no válida") String prioridad) {
     }
 }
