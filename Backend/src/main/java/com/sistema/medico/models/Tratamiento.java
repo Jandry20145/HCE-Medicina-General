@@ -37,4 +37,26 @@ public class Tratamiento {
             fechaHoraRegistro = LocalDateTime.now();
         }
     }
+
+    // Receta estructurada (AM 00031-2020; ver docs/ESPECIFICACION_HCE_ECUADOR.md §7).
+    @Column(name = "forma_farmaceutica", length = 60)
+    private String formaFarmaceutica;
+
+    @Column(name = "concentracion", length = 60)
+    private String concentracion;
+
+    @Column(name = "dosis", length = 60)
+    private String dosis;
+
+    @Column(name = "via", length = 40)
+    private String via;
+
+    @Column(name = "frecuencia", length = 60)
+    private String frecuencia;
+
+    @Column(name = "duracion", length = 60)
+    private String duracion;
+
+    @Column(name = "cantidad", length = 40)
+    private String cantidad;
 }

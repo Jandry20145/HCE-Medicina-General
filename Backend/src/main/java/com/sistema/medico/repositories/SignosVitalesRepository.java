@@ -9,4 +9,6 @@ import java.util.Optional;
 @Repository
 public interface SignosVitalesRepository extends JpaRepository<SignosVitales, Integer> {
     Optional<SignosVitales> findByConsultaMedica_IdConsulta(Integer idConsulta);
+
+    void deleteByConsultaMedica_IdConsulta(Integer idConsulta);
 }

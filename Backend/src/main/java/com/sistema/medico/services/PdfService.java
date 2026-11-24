@@ -29,11 +29,11 @@ public class PdfService {
 
     public byte[] generarPdfHistoriaClinica(Integer idPaciente) throws DocumentException {
         Optional<Paciente> pacienteOpt = pacienteRepository.findById(idPaciente);
-        if (pacienteOpt.isEmpty()) throw new RuntimeException("Paciente no encontrado");
+        if (pacienteOpt.isEmpty()) throw new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Paciente no encontrado");
         Paciente paciente = pacienteOpt.get();
 
         HistoriaClinica historia = historiaClinicaRepository.findByPaciente_IdPaciente(idPaciente)
-                .orElseThrow(() -> new RuntimeException("Historia Clinica no encontrada"));
+                .orElseThrow(() -> new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Historia clínica no encontrada"));
 
         Document document = new Document(PageSize.A4, 40, 40, 50, 50);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -169,7 +169,7 @@ public class PdfService {
             card.setSpacingAfter(10f);
 
             // Cabecera Consulta
-            PdfPCell cHead = new PdfPCell(new Paragraph("Fecha: " + consulta.getFechaHoraAtencion().format(formatter) + " | Médico ID: " + consulta.getMedico().getIdUsuario(), boldTextFont));
+            PdfPCell cHead = new PdfPCell(new Paragraph("Fecha: " + consulta.getFechaHoraAtencion().format(formatter) + " | " + consulta.getEstadoConsulta() + " | Médico: " + (consulta.getMedico() != null ? consulta.getMedico().getNombresCompletos() : "—"), boldTextFont));
             cHead.setBackgroundColor(new Color(230, 240, 250));
             cHead.setPadding(8f);
             cHead.setBorderColor(new Color(200, 200, 200));

@@ -2,28 +2,26 @@ package com.sistema.medico.controllers;
 
 import com.sistema.medico.models.CatalogoCie10;
 import com.sistema.medico.repositories.CatalogoCie10Repository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/catalogos")
-@CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 public class CatalogoController {
 
-    @Autowired
-    private CatalogoCie10Repository catalogoCie10Repository;
+    private final CatalogoCie10Repository catalogoCie10Repository;
 
+    /** Hasta 50 coincidencias por código o nombre; menos de 2 caracteres no busca. */
     @GetMapping("/cie10/buscar")
-    public ResponseEntity<List<CatalogoCie10>> buscarCie10(@RequestParam("q") String query) {
-        try {
-            List<CatalogoCie10> resultados = catalogoCie10Repository.findTop50ByNombreEnfermedadContainingIgnoreCaseOrCodigoCieContainingIgnoreCase(query, query);
-            return ResponseEntity.ok(resultados);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.internalServerError().build();
+    public List<CatalogoCie10> buscarCie10(@RequestParam("q") String q) {
+        String texto = q.trim();
+        if (texto.length() < 2 || texto.length() > 100) {
+            return List.of();
         }
+        return catalogoCie10Repository
+                .findTop50ByNombreEnfermedadContainingIgnoreCaseOrCodigoCieContainingIgnoreCase(texto, texto);
     }
 }
