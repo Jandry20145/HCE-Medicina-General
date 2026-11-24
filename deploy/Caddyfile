@@ -1,0 +1,12 @@
+# HTTPS opcional delante de la aplicación (perfil "https" de docker-compose).
+# "tls internal" usa una autoridad propia de Caddy: instale su raíz en cada equipo
+# (docs/OPERACION.md). Con un dominio público, quite esa línea y Caddy pide un certificado real.
+{$HTTPS_HOST:localhost} {
+	tls internal
+	encode gzip
+	# La API va directo al backend: Caddy pone en X-Forwarded-For la IP real del cliente
+	# (descarta la que envíe el cliente), así el bloqueo de login y la auditoría no se falsean.
+	# Pasar por nginx haría que todos los clientes aparecieran con la IP de Caddy.
+	reverse_proxy /api/* backend:8080
+	reverse_proxy frontend:80
+}

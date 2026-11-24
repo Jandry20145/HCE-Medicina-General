@@ -47,8 +47,9 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-    ports:
-      - "127.0.0.1:${BACKEND_PORT:-8521}:8080" # el navegador entra por nginx (/api)
+    # Sin puerto publicado: solo nginx o Caddy llegan a la API. El backend confía en la
+    # cabecera X-Forwarded-For de los proxies internos; un puerto abierto permitiría
+    # falsearla y esquivar el bloqueo de login o la IP de la auditoría.
 
   # ---------- Aplicación web ----------
   frontend:
@@ -60,6 +61,24 @@ services:
         condition: service_healthy
     ports:
       - "${FRONTEND_PORT:-8520}:80"
+
+  # ---------- HTTPS opcional: docker compose --profile https up -d ----------
+  # Certificado propio de Caddy ("tls internal"); ver docs/OPERACION.md.
+  https:
+    image: caddy:2.10-alpine
+    container_name: hcemg-https
+    profiles: ["https"]
+    restart: unless-stopped
+    depends_on:
+      frontend:
+        condition: service_healthy
+    environment:
+      HTTPS_HOST: ${HTTPS_HOST:-localhost}
+    ports:
+      - "${HTTPS_PORT:-8543}:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
 
   # ---------- Respaldo bajo demanda: docker compose run --rm backup ----------
   backup:
@@ -87,3 +106,5 @@ services:
 volumes:
   mysql-data:
     name: hcemg-mysql-data
+  caddy-data:
+    name: hcemg-caddy-data
